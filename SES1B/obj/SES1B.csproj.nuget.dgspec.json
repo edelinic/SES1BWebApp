@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Erina\\source\\repos\\SES1B\\SES1B\\SES1B.csproj": {}
+    "/Users/cmm/Projects/SES1BWebApp/SES1B/SES1B.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Erina\\source\\repos\\SES1B\\SES1B\\SES1B.csproj": {
+    "/Users/cmm/Projects/SES1BWebApp/SES1B/SES1B.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Erina\\source\\repos\\SES1B\\SES1B\\SES1B.csproj",
+        "projectUniqueName": "/Users/cmm/Projects/SES1BWebApp/SES1B/SES1B.csproj",
         "projectName": "SES1B",
-        "projectPath": "C:\\Users\\Erina\\source\\repos\\SES1B\\SES1B\\SES1B.csproj",
-        "packagesPath": "C:\\Users\\Erina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Erina\\source\\repos\\SES1B\\SES1B\\obj\\",
+        "projectPath": "/Users/cmm/Projects/SES1BWebApp/SES1B/SES1B.csproj",
+        "packagesPath": "/Users/cmm/.nuget/packages/",
+        "outputPath": "/Users/cmm/Projects/SES1BWebApp/SES1B/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Erina\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/cmm/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -79,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
         }
       }
     }
