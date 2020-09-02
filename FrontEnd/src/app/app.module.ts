@@ -13,6 +13,7 @@ import { PreOrderReservationComponent } from './components/pre-order-reservation
 import { ReservationViewComponent } from './components/reservation-view/reservation-view.component';
 import { ReservationEditComponent } from './components/reservation-edit/reservation-edit.component';
 import { ReservationPreorderComponent } from './components/reservation-preorder/reservation-preorder.component';
+import { LoyaltiesComponent } from './components/loyalties/loyalties.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReservationPreorderComponent } from './components/reservation-preorder/
     PreOrderReservationComponent,
     ReservationViewComponent,
     ReservationEditComponent,
-    ReservationPreorderComponent
+    ReservationPreorderComponent,
+    LoyaltiesComponent
   ],
   imports: [
     BrowserModule,
