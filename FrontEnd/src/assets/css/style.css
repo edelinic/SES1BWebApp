@@ -494,6 +494,15 @@ textarea.form-control {
   width:100%;
 }
 
+.navbarAccount{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding:0rem 14rem
+}
+
 .site-tab-nav li a {
   text-transform: uppercase;
   font-size: 25px;
