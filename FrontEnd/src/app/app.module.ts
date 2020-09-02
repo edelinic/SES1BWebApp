@@ -7,12 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
-import { ViewReservationComponent } from './components/view-reservation/view-reservation.component';
-import { EditReservationComponent } from './components/edit-reservation/edit-reservation.component';
-import { PreOrderReservationComponent } from './components/pre-order-reservation/pre-order-reservation.component';
 import { ReservationViewComponent } from './components/reservation-view/reservation-view.component';
-import { ReservationEditComponent } from './components/reservation-edit/reservation-edit.component';
 import { ReservationPreorderComponent } from './components/reservation-preorder/reservation-preorder.component';
+import { ReservationEditComponent } from './components/reservation-edit/reservation-edit.component';
 import { LoyaltiesComponent } from './components/loyalties/loyalties.component';
 
 @NgModule({
@@ -22,14 +19,12 @@ import { LoyaltiesComponent } from './components/loyalties/loyalties.component';
     LoginComponent,
     RegistrationComponent,
     ReservationComponent,
-    ViewReservationComponent,
-    EditReservationComponent,
-    PreOrderReservationComponent,
     ReservationViewComponent,
     ReservationEditComponent,
     ReservationPreorderComponent,
-    LoyaltiesComponent
+    LoyaltiesComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule
