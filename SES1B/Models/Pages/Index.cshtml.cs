@@ -9,8 +9,12 @@ namespace SES1B.Models.Pages
 {
     public class IndexModel : PageModel
     {
+
+
         public void OnGet()
         {
         }
     }
 }
+ 
+

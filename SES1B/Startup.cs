@@ -28,6 +28,7 @@ namespace SES1B
         {
             services.AddControllers();
             services.AddDbContext<RestaurantContext>();
+            services.AddDbContext<DatabaseContext>(); //Database area for users
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

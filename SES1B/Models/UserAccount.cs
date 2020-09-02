@@ -1,21 +1,21 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 
 namespace SES1B.Models
 {
-    public class UserAccount
+    public class UserAccount  //IdentityUser
     {
-        [Table("Account")] //Add the name of the table in the database. The error must be something to do with the database methinks
-
-
-        [Key] //Methinks that there's an issue with the SQL components not being set up. 
+        [PersonalData]
         public int Id { get; set; } //setting and getting the account ID
+        [PersonalData]
         public string Username { get; set; }
+        [PersonalData]
         public string Password { get; set; }
-        public string Email { get; set; }
+        
+        [PersonalData]
         public string FullName { get; set; }
 
-        
     }
 
 
