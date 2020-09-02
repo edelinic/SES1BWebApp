@@ -7,6 +7,7 @@ import { ReservationComponent } from './components/reservation/reservation.compo
 import { ReservationEditComponent } from './components/reservation-edit/reservation-edit.component';
 import { LoyaltiesComponent } from './components/loyalties/loyalties.component';
 import { ReservationViewComponent } from './components/reservation-view/reservation-view.component';
+import { ReservationPreorderComponent } from './components/reservation-preorder/reservation-preorder.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,11 @@ const routes: Routes = [
     path: 'reservation',
     pathMatch: 'full',
     component:ReservationComponent
+  },
+  {
+    path: 'reservation/preorder',
+    pathMatch: 'full',
+    component:ReservationPreorderComponent
   },
   {
     path: 'reservation/view',
