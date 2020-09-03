@@ -10,7 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Identity;
 using SES1B.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace SES1B
 {
@@ -27,8 +29,44 @@ namespace SES1B
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<RestaurantContext>();
-            services.AddDbContext<DatabaseContext>(); //Database area for users
+           services.AddDbContext<RestaurantContext>(options =>
+                           options.UseSqlServer(Configuration.GetConnectionString("restaurantdb.cvz3e6ne8iwm.ap - southeast - 2.rds.amazonaws.com")
+           ));
+            //Database area for users
+            services.AddDbContext<NewAccountContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("restaurantdb.cvz3e6ne8iwm.ap - southeast - 2.rds.amazonaws.com")));
+        
+
+                
+
+
+            //services.AddDbContext<DatabaseContext>(options =>
+            //services.UseSqlServer(Configuration.GetConnectionString("UserAccountContext")));
+
+
+            services.AddIdentity<IdentityUser, IdentityRole>(config => //AddIdentity registers the services for the Account
+            {
+
+                //Password settings 
+                config.Password.RequiredLength = 6;
+                config.Password.RequireDigit = true;
+                config.Password.RequireNonAlphanumeric = true;
+                config.Password.RequireUppercase = true;
+               
+                //user settings
+                config.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+
+            });
+            //.AddEntityFrameworkStores<DatabaseContext>()
+                //.AddDefaultTokenProviders();
+
+            services.ConfigureApplicationCookie(config =>
+            {
+                config.Cookie.Name = "Identity.Cookie";
+                config.LoginPath = "Home/Login"; //Double check this with the log in path. 
+
+            });
+                
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +82,8 @@ namespace SES1B
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

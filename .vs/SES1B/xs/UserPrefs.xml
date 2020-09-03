@@ -1,30 +1,28 @@
 ﻿<Properties StartupConfiguration="{E5B965AD-EDDB-4D0C-ADB0-AA441EF03F8C}|SES1B">
   <MonoDevelop.Ide.ItemProperties.SES1B PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SES1B/Models/Account.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SES1B/Controllers/NewAccountController.cs">
     <Files>
-      <File FileName="SES1B/Controllers/MenuItemsController.cs" Line="16" Column="16" />
-      <File FileName="SES1B/Models/Pages/Index.cshtml.cs" />
-      <File FileName="SES1B/Models/Pages/Index.cshtml" />
-      <File FileName="SES1B/Models/RestaurantContext.cs" />
-      <File FileName="SES1B/Models/UserAccount.cs" />
-      <File FileName="SES1B/Models/UserAccountContext.cs" />
-      <File FileName="SES1B/Startup.cs" />
-      <File FileName="SES1B/Models/MenuItems.cs" />
-      <File FileName="SES1B/Controllers/RegistrationController.cs" />
-      <File FileName="SES1B/Controllers/WeatherForecastController.cs" />
-      <File FileName="SES1B/Program.cs" />
-      <File FileName="SES1B/Models/Account.cs" Line="6" Column="6" />
+      <File FileName="SES1B/Models/NewAccountContext.cs" Line="52" Column="48" />
+      <File FileName="SES1B/Models/NewAccount.cs" Line="25" Column="1" />
+      <File FileName="SES1B/Models/UserAccountContext.cs" Line="12" Column="1" />
+      <File FileName="SES1B/Models/NewAccountController.cs" Line="26" Column="61" />
+      <File FileName="SES1B/Models/UserAccount.cs" Line="25" Column="12" NotebookId="1" />
+      <File FileName="SES1B/Controllers/RegistrationController.cs" Line="5" Column="28" NotebookId="1" />
+      <File FileName="SES1B/Models/RestaurantContext.cs" Line="24" Column="10" NotebookId="1" />
+      <File FileName="SES1B/Startup.cs" NotebookId="1" />
+      <File FileName="SES1B/Controllers/MenuItemsController.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SES1B" expanded="True">
             <Node name="SES1B" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="Account.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="NewAccountController.cs" selected="True" />
               </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -32,7 +30,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
