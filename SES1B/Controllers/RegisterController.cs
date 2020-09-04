@@ -47,10 +47,7 @@ namespace SES1B.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutNewAccount(int id, NewAccount newAccount)
         {
-            if (id != newAccount.Id)
-            {
-                return BadRequest();
-            }
+            
 
             _context.Entry(newAccount).State = EntityState.Modified;
 
@@ -101,10 +98,10 @@ namespace SES1B.Controllers
             return newAccount;
         }
 
-        private bool NewAccountExists(int id)
-        {
-            return _context.NewAccounts.Any(e => e.Id == id);
-        }
+       // private bool NewAccountExists(int id)
+       // {
+         //   return _context.NewAccounts.Any(e => e.Id == id);
+        //}
 
        // public IActionResult Register(NewAccountController vm)
         //{

@@ -35,9 +35,10 @@ namespace SES1B
             //Database area for users
             services.AddDbContext<NewAccountContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("restaurantdb.cvz3e6ne8iwm.ap - southeast - 2.rds.amazonaws.com")));
-        
 
-                
+            services.AddIdentity<NewAccount, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<NewAccountContext>();
+
 
 
             //services.AddDbContext<DatabaseContext>(options =>

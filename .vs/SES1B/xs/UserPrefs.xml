@@ -1,32 +1,34 @@
 ﻿<Properties StartupConfiguration="{E5B965AD-EDDB-4D0C-ADB0-AA441EF03F8C}|Default">
   <MonoDevelop.Ide.ItemProperties.SES1B PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SES1B/Models/AuthenticateModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SES1B/Models/UserService.cs">
     <Files>
-      <File FileName="SES1B/Models/NewAccountContext.cs" Line="17" Column="1" />
-      <File FileName="SES1B/Models/NewAccount.cs" Line="17" Column="45" />
-      <File FileName="SES1B/Models/Pages/Index.cshtml.cs" />
-      <File FileName="SES1B/Controllers/NewAccountController.cs" Line="1" Column="1" />
-      <File FileName="SES1B/Models/RegisterModel.cs" Line="1" Column="1" />
-      <File FileName="SES1B/Models/UserAccountContext.cs" Line="1" Column="1" />
-      <File FileName="SES1B/Models/Pages/Register.cshtml" Line="6" Column="15" />
-      <File FileName="SES1B/Models/Pages/Index.cshtml" Line="1" Column="1" />
-      <File FileName="SES1B/Startup.cs" Line="58" Column="27" />
-      <File FileName="SES1B/Models/RestaurantContext.cs" Line="1" Column="1" />
-      <File FileName="SES1B/Models/MenuItems.cs" Line="1" Column="1" />
-      <File FileName="SES1B/Models/AuthenticateModel.cs" Line="9" Column="1" />
+      <File FileName="SES1B/Models/Pages/Index.cshtml.cs" Line="134" Column="1" />
+      <File FileName="SES1B/Models/Pages/Register.cshtml" />
+      <File FileName="SES1B/Models/Pages/Index.cshtml" />
+      <File FileName="SES1B/Startup.cs" />
+      <File FileName="SES1B/Models/RestaurantContext.cs" />
+      <File FileName="SES1B/Models/MenuItems.cs" />
+      <File FileName="SES1B/Models/AuthenticateModel.cs" />
+      <File FileName="SES1B/appsettings.Development.json" />
+      <File FileName="SES1B/Controllers/WeatherForecastController.cs" />
+      <File FileName="SES1B/Models/UserService.cs" Line="70" Column="25" />
+      <File FileName="SES1B/Models/User.cs" />
+      <File FileName="SES1B/Controllers/MenuItemsController.cs" />
+      <File FileName="SES1B/Models/AutoMapperProfile.cs" />
+      <File FileName="SES1B/Models/UserModel.cs" />
+      <File FileName="SES1B/Models/AppException.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SES1B" expanded="True">
             <Node name="SES1B" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
+              <Node name="Dependencies" expanded="True" />
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="AuthenticateModel.cs" selected="True" />
+                <Node name="UserService.cs" selected="True" />
               </Node>
+              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>
