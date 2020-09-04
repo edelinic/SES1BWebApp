@@ -14,7 +14,7 @@ namespace SES1B.Controllers
 
     public class ReservationController : ControllerBase
     {
-      private readonly ReservationContext_context;
+      private readonly ReservationContext _context;
 
       public ReservationController(ReservationController context)
       {
@@ -102,5 +102,4 @@ namespace SES1B.Controllers
         return Ok(Reservation);
       }
     }
-
 }
