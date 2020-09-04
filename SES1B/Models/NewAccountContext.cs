@@ -39,7 +39,7 @@ namespace SES1B.Models
                     .HasColumnType("int(11)");
 
                 entity.Property(e => e.Password)
-                    .HasColumnName("availability")
+                    .HasColumnName("password")
                     .HasColumnType("tinyint(4)");
 
                 entity.Property(e => e.firstname)
@@ -51,10 +51,18 @@ namespace SES1B.Models
 
                 entity.Property(e => e.lastname)
                     .IsRequired()
-                    .HasColumnName("name")
+                    .HasColumnName("lastname")
                     .HasColumnType("string(50)")
                     .HasCharSet("utf8")
                     .HasCollation("utf8_general_ci");
+
+                entity.Property(e => e.EmailAddress)
+                    .IsRequired()
+                    .HasColumnName("email")
+                    .HasColumnType("string(50)")
+                    .HasCharSet("utf8")
+                    .HasCollation("utf8_general_ci");
+
 
             });
 

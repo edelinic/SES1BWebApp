@@ -164,3 +164,4 @@
 /Users/cmm/Projects/SES1BWebApp/SES1B/obj/Release/netcoreapp3.1/SES1B.pdb
 /Users/cmm/Projects/SES1BWebApp/SES1B/obj/Release/netcoreapp3.1/SES1B.genruntimeconfig.cache
 /Users/cmm/Projects/SES1BWebApp/SES1B/obj/Release/netcoreapp3.1/SES1B.csprojAssemblyReference.cache
+/Users/cmm/Projects/SES1BWebApp/SES1B/obj/Release/netcoreapp3.1/Razor/Models/Pages/Register.cshtml.g.cs

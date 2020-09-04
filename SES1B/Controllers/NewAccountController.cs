@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SES1B.Models;
 
-namespace SES1B.Models
+namespace SES1B.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -104,5 +105,14 @@ namespace SES1B.Models
         {
             return _context.NewAccounts.Any(e => e.Id == id);
         }
-    }
+
+       // public IActionResult Register(NewAccountController vm)
+        //{
+          //  if (!ModelState.IsValid) 
+            //    return //whatever the model is
+
+           // var user = new ApplicationUser {UserName - vmmEmail, Email = vm. }
+
+
+        }
 }
