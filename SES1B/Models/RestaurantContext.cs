@@ -16,6 +16,7 @@ namespace SES1B.Models
         }
 
         public virtual DbSet<MenuItems> MenuItems { get; set; }
+        public virtual DbSet<Order> Order {get; set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -28,6 +29,7 @@ namespace SES1B.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //model builder for MenuItems
             modelBuilder.Entity<MenuItems>(entity =>
             {
                 entity.Property(e => e.Id)
@@ -54,6 +56,18 @@ namespace SES1B.Models
                 entity.Property(e => e.Price)
                     .HasColumnName("price")
                     .HasColumnType("decimal(5,2)");
+            });
+
+            //model builder for Order 
+            modelBuilder.Entity<Order>(entity =>
+            {
+                entity.Property(e => e.OrderID)
+                    .HasColumnName("OrderID")
+                    .HasColumnType("int(10)");
+
+                entity.Property(e => e.BookingID)
+                    .HasColumnName("BookingID")
+                    .HasColumnType("int(11)");
             });
 
             OnModelCreatingPartial(modelBuilder);
