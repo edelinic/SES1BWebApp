@@ -70,6 +70,11 @@ namespace SES1B.Controllers
             return NoContent();
         }
 
+        private bool NewAccountExists(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         // POST: api/NewAccount
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.

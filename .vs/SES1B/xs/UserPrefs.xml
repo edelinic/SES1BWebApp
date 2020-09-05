@@ -2,28 +2,19 @@
   <MonoDevelop.Ide.ItemProperties.SES1B PreferredExecutionTarget="/Applications/Safari.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="SES1B/Models/UserService.cs">
     <Files>
-      <File FileName="SES1B/Models/Pages/Index.cshtml.cs" Line="134" Column="1" />
-      <File FileName="SES1B/Models/Pages/Register.cshtml" />
-      <File FileName="SES1B/Models/Pages/Index.cshtml" />
-      <File FileName="SES1B/Startup.cs" />
+      <File FileName="SES1B/Models/UserService.cs" Line="35" Column="34" />
+      <File FileName="SES1B/Controllers/UserController.cs" />
+      <File FileName="SES1B/SES1B.csproj" />
       <File FileName="SES1B/Models/RestaurantContext.cs" />
-      <File FileName="SES1B/Models/MenuItems.cs" />
-      <File FileName="SES1B/Models/AuthenticateModel.cs" />
-      <File FileName="SES1B/appsettings.Development.json" />
-      <File FileName="SES1B/Controllers/WeatherForecastController.cs" />
-      <File FileName="SES1B/Models/UserService.cs" Line="70" Column="25" />
-      <File FileName="SES1B/Models/User.cs" />
-      <File FileName="SES1B/Controllers/MenuItemsController.cs" />
-      <File FileName="SES1B/Models/AutoMapperProfile.cs" />
-      <File FileName="SES1B/Models/UserModel.cs" />
-      <File FileName="SES1B/Models/AppException.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="SES1B" expanded="True">
             <Node name="SES1B" expanded="True">
-              <Node name="Dependencies" expanded="True" />
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="UserService.cs" selected="True" />

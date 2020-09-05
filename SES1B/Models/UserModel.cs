@@ -5,6 +5,7 @@ namespace SES1B.Models
     {
         public UserModel()
         {
+        }
 
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -12,4 +13,4 @@ namespace SES1B.Models
         public string Username { get; set; }
     }
     }
-}
+

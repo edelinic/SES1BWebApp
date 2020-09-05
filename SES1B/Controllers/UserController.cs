@@ -5,28 +5,32 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SES1B.Models;
-using static SES1B.Models.UserService;
+using static SES1B.Models.IUserService;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+//This controller defines all routes/endpoints for the api that relate to users which includes login and registration. 
+
 
 namespace SES1B.Controllers
 {
 
-    [Authorise]
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
-        private IUserService _userService;
+        private Models.IUserService.IUserService _userService;
         private IMapper _mapper;
         private readonly AppSettings _appSettings;
 
-        public UsersController(
-            IUserService userService,
+        public UserController(
+            Models.IUserService.IUserService userService,
             IMapper mapper,
             IOptions<AppSettings> appSettings)
         {
@@ -79,7 +83,7 @@ namespace SES1B.Controllers
             try
             {
                 // create user
-                _userService.Create(user, model.Password);
+                _userService.Create(user, password: model.Password);
                 return Ok();
             }
             catch (AppException ex)
@@ -96,15 +100,6 @@ namespace SES1B.Controllers
             var model = _mapper.Map<IList<UserModel>>(users);
             return Ok(model);
         }
-
-        [HttpGet("{id}")]
-        public IActionResult GetById(int id)
-        {
-            var user = _userService.GetById(id);
-            var model = _mapper.Map<UserModel>(user);
-            return Ok(model);
-        }
-
 
         // GET: api/values
 [HttpGet]
