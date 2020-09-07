@@ -15,5 +15,10 @@ namespace SES1B.Models
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public object Id { get; internal set; }
+
+        internal static object SingleOrDefault(Func<object, bool> p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

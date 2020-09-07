@@ -5,10 +5,10 @@ using System.Linq;
 using SES1B.Controllers;
 
 namespace SES1B.Models
+{
+    public interface IUserService
     {
         public interface IUserService
-        {
-            public interface IUserService
         {
             User Authenticate(string username, string password);
             IEnumerable<User> GetAll();
@@ -95,11 +95,6 @@ namespace SES1B.Models
                 throw new NotImplementedException();
             }
 
-            public void Delete(int id)
-            {
-                throw new NotImplementedException();
-            }
-
             public User GetById(int id)
             {
                 throw new NotImplementedException();
@@ -110,17 +105,10 @@ namespace SES1B.Models
                 throw new NotImplementedException();
             }
 
-            public void Update(User user, string password = null)
-            {
-                throw new NotImplementedException();
-            }
 
-            public User Authenticate(string username, string password)
-            {
-                throw new NotImplementedException();
-            }
+
         }
-    }
 
+    }
 }
    
