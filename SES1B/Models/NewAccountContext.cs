@@ -30,8 +30,7 @@ namespace SES1B.Models
         }
 
 
-        public DbSet<NewAccount> newAccounts { get; set; }
-        public object Users { get; internal set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
 

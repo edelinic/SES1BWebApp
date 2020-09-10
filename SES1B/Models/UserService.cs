@@ -18,9 +18,9 @@ namespace SES1B.Models
 
         public class UserService : IUserService
         {
-            private NewAccountContext _context;
+            private RestaurantContext _context;
 
-            public UserService(NewAccountContext context)
+            public UserService(RestaurantContext context)
             {
                 _context = context;
             }
@@ -30,7 +30,7 @@ namespace SES1B.Models
                 if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                     return null;
 
-                var user = _context.Users.SingleOrDefault((x) => x.Username == username);
+                var user = _context.Users.Single((x) => x.Username == username);
 
                 // check if username exists
                 if (user == null)
