@@ -32,32 +32,14 @@ namespace SES1B
            services.AddDbContext<RestaurantContext>(options =>
                            options.UseSqlServer(Configuration.GetConnectionString("restaurantdb.cvz3e6ne8iwm.ap - southeast - 2.rds.amazonaws.com")
            ));
-            //Database area for users
-            services.AddDbContext<NewAccountContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("restaurantdb.cvz3e6ne8iwm.ap - southeast - 2.rds.amazonaws.com")));
-
-            services.AddIdentity<NewAccount, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<NewAccountContext>();
-
+            
 
 
             //services.AddDbContext<DatabaseContext>(options =>
             //services.UseSqlServer(Configuration.GetConnectionString("UserAccountContext")));
 
 
-            services.AddIdentity<IdentityUser, IdentityRole>(config => //AddIdentity registers the services for the Account
-            {
-
-                //Password settings 
-                config.Password.RequiredLength = 6;
-                config.Password.RequireDigit = true;
-                config.Password.RequireNonAlphanumeric = true;
-                config.Password.RequireUppercase = true;
-               
-                //user settings
-                config.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
-
-            });
+        
             //.AddEntityFrameworkStores<DatabaseContext>()
                 //.AddDefaultTokenProviders();
 
