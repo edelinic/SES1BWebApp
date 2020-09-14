@@ -1,10 +1,14 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace SES1B.Models
 
 {
     public class User
     {
+        [Key]
         public int userId { get; set; }
+
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string email { get; set; }

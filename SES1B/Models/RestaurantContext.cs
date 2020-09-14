@@ -17,6 +17,8 @@ namespace SES1B.Models
 
         public virtual DbSet<MenuItems> MenuItems { get; set; }
 
+        public virtual DbSet<User> Users { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -58,7 +60,7 @@ namespace SES1B.Models
 
 
             OnModelCreatingPartial(modelBuilder);
-            //takes info from database and autogenerates it for teh code. All things in quotes match what's in the database
+            //takes info from database and autogenerates it for the code. All things in quotes match what's in the database
 
 
             modelBuilder.Entity<User>(entity =>
