@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 namespace SES1B.Models
 
 {
-    public partial class User
+    public class User
     {
         [Key]
         public int userId { get; set; }

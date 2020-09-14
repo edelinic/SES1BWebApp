@@ -100,16 +100,16 @@ namespace SES1B.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<User>> DeleteUser(int id)
         {
-            var order = await _context.User.FindAsync(id);
-            if (order == null)
+            var user = await _context.User.FindAsync(id);
+            if (user == null)
             {
                 return NotFound();
             }
 
-            _context.User.Remove(order);
+            _context.User.Remove(User);
             await _context.SaveChangesAsync();
 
-            return order;
+            return User;
         }
 
         private bool UserExists(int id)
