@@ -51,6 +51,23 @@ h1, h2, h3, h4, h5,
   }
 }
 
+
+
+.site-section-preorder{
+  padding: 1em 0;
+
+}
+
+.lead2{
+  font-size:12px;
+  padding-bottom:12%;
+}
+
+.menuIcon{
+  width:15px;
+  padding-bottom:4px;
+}
+
 .site-navbar-light .navbar-nav > .nav-item > .nav-link {
   font-size: 13px;
   text-transform: uppercase;
@@ -473,9 +490,22 @@ textarea.form-control {
   }
 }
 
+.btn-preOrder{
+  width:100%;
+}
+
+.navbarAccount{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding:0rem 14rem
+}
+
 .site-tab-nav li a {
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 25px;
   letter-spacing: .2em;
   color: #ccc;
   border: 2px solid #ccc;
@@ -972,4 +1002,8 @@ textarea.form-control {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
   }
+}
+
+.userAccount{
+  font-size: 12px;
 }
