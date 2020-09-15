@@ -44,12 +44,12 @@ namespace SES1B.Controllers
           return BadRequest(ModelState);
         }
 
-        if (id != game.id)
+        if (id != reservation.id)
         {
           return BadRequest();
         }
 
-        _context.Entry(game).State = EntityState.Modified;
+        _context.Entry(reservation).State = EntityState.Modified;
 
         try
         {
@@ -57,7 +57,7 @@ namespace SES1B.Controllers
         }
         catch (DbUpdateConcurrencyException)
         {
-          if (!GameExists(id))
+          if (!reservationExists(id))
           {
             return NotFount();
           }
@@ -80,7 +80,7 @@ namespace SES1B.Controllers
 
         _context.Reservation.SaveChangesAsync();
 
-        return CreatedAtAction("GetReservation", new { id = Game.Id}, game);
+        return CreatedAtAction("GetReservation", new { id = reservation.Id}, reservation);
       }
 
       [HttpDelete("{id}")]
@@ -91,7 +91,7 @@ namespace SES1B.Controllers
           return BadRequest(ModelState);
         }
 
-        var game = await _context.Reservation.FindAsync(id);
+        var reservation = await _context.Reservation.FindAsync(id);
         if (Reservation == null)
         {
           return NotFound();

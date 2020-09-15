@@ -70,6 +70,35 @@ namespace SES1B.Models
                     .HasColumnType("int(11)");
             });
 
+            //model builder for MenuItems
+            modelBuilder.Entity<Reservation>(entity =>
+            {
+                entity.Property(e => e.idReservation)
+                    .HasColumnName("idReservation")
+                    .HasColumnType("int(1)");
+                
+                entity.Property(e => e.numPeople)
+                    .HasColumnName("numPeople")
+                    .HasColumnType("int(2)");
+
+                entity.Property(e => e.tableNum)
+                    .HasColumnName("tableNum")
+                    .HasColumnType("int(13)");
+
+                entity.Property(e => e.specialRequest)
+                    .HasColumnName("specialRequest")
+                    .HasColumnType("String(1)");
+
+                entity.Property(e => e.phoneNum)
+                    .HasColumnName("phoneNum")
+                    .HasColumnType("int(1)");
+                
+                entity.Property(e => e.dateandtime)
+                    .HasColumnName("dateandtime")
+                    .HasColumnType("int(1)");
+
+            });
+
             OnModelCreatingPartial(modelBuilder);
         }
 
