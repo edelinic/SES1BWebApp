@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{E5B965AD-EDDB-4D0C-ADB0-AA441EF03F8C}|Default">
   <MonoDevelop.Ide.ItemProperties.SES1B PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SES1B/PasswordHashing.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SES1B/Controllers/NewUserController.cs">
     <Files>
       <File FileName="SES1B/Models/RestaurantContext.cs" Line="86" Column="48" IsPinned="True" />
       <File FileName="SES1B/Models/User.cs" />
       <File FileName="SES1B/Controllers/OrdersController.cs" />
       <File FileName="SES1B/Models/MenuItems.cs" />
       <File FileName="SES1B/Models/Order.cs" />
-      <File FileName="SES1B/PasswordHashing.cs" Line="12" Column="13" />
-      <File FileName="SES1B/Models/PasswordHashing.cs" Line="1" Column="1" />
+      <File FileName="SES1B/PasswordHashing.cs" />
+      <File FileName="SES1B/Controllers/NewUserController.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,10 +18,11 @@
               <Node name="Dependencies" expanded="True">
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
-              <Node name="Controllers" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="NewUserController.cs" selected="True" />
+              </Node>
               <Node name="Models" expanded="True" />
               <Node name="appsettings.json" expanded="True" />
-              <Node name="PasswordHashing.cs" selected="True" />
             </Node>
           </Node>
         </State>
