@@ -18,7 +18,7 @@ namespace SES1B.Models
         public virtual DbSet<MenuItems> MenuItems { get; set; }
         public virtual DbSet<Order> Order {get; set;}
 
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<User> User { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -96,17 +96,19 @@ namespace SES1B.Models
                .HasColumnType("varchar(50)");
 
                entity.Property(e => e.DOB)
-               .HasColumnName("DOB");
+               .HasColumnName("DOB")
+               .HasColumnType("date");
 
                entity.Property(e => e.phoneNumber)
                .HasColumnName("Phone Number")
                .HasColumnType("varchar(10)");
 
                entity.Property(e => e.loyaltyNumber)
-               .HasColumnName("Loyalty Member")
+               .HasColumnName("Loyalty Member Number")
                .HasColumnType("varchar(10)");
            });
 
+           OnModelCreatingPartial(modelBuilder);
 
         }
 
