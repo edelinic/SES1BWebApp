@@ -17,8 +17,7 @@ namespace SES1B.Models
 
         public virtual DbSet<MenuItems> MenuItems { get; set; }
         public virtual DbSet<Order> Order {get; set;}
-
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<User> User { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

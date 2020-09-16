@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SES1B.Models;
-using System.Security.Claims;
+using System.Linq;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,10 +13,11 @@ namespace SES1B.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-    public class RegistrationController : ControllerBase
+    public class UserController : ControllerBase
     {
-        private readonly RegistrationController _context;
-        public RegistrationController(RegistrationController context)
+        private readonly RestaurantContext _context;
+
+        public UserController(RestaurantContext context)
         {
             _context = context;
         }
@@ -74,12 +75,7 @@ namespace SES1B.Controllers
             return NoContent();
         }
 
-        private object Entry(User user)
-        {
-            throw new NotImplementedException();
-        }
-
-        private Task SaveChangesAsync()
+        private bool UserExists(int id)
         {
             throw new NotImplementedException();
         }
@@ -90,7 +86,7 @@ namespace SES1B.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> Postuser(User user)
         {
-            _context.User.Add(User);
+            _context.User.Add(user);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetUser", new { id = user.userId }, user);
@@ -106,15 +102,15 @@ namespace SES1B.Controllers
                 return NotFound();
             }
 
-            _context.User.Remove(User);
+            _context.User.Remove(user);
             await _context.SaveChangesAsync();
 
-            return User;
+            return user;
         }
 
-        private bool UserExists(int id)
+        private bool OrderExists(int id)
         {
-            return _context.User.Any(e => e.UserID == id);
+            return _context.User.Any(e => e.userId == id);
         }
     }
-}
+    }
