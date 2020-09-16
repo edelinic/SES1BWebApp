@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SES1B.Models;
-using System.Linq;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -80,7 +79,7 @@ namespace SES1B.Controllers
             throw new NotImplementedException();
         }
 
-        // POST: api/Orders
+        // POST: api/User
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
@@ -106,11 +105,6 @@ namespace SES1B.Controllers
             await _context.SaveChangesAsync();
 
             return user;
-        }
-
-        private bool OrderExists(int id)
-        {
-            return _context.User.Any(e => e.userId == id);
         }
     }
     }
