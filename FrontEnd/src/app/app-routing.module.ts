@@ -5,9 +5,12 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ReservationComponent } from './components/reservation/reservation.component';
 import { ReservationEditComponent } from './components/reservation-edit/reservation-edit.component';
+<<<<<<< HEAD
+=======
 import { LoyaltiesComponent } from './components/loyalties/loyalties.component';
 import { ReservationViewComponent } from './components/reservation-view/reservation-view.component';
 import { ReservationPreorderComponent } from './components/reservation-preorder/reservation-preorder.component';
+>>>>>>> 24f22fabac5c2351b1c1d55dfbd83bb0fb3abbc3
 
 
 const routes: Routes = [
@@ -28,6 +31,9 @@ const routes: Routes = [
     component:ReservationComponent
   },
   {
+<<<<<<< HEAD
+    path: 'reservation/edit',
+=======
     path: 'reservation/preorder',
     pathMatch: 'full',
     component:ReservationPreorderComponent
@@ -39,15 +45,19 @@ const routes: Routes = [
   },
   {
     path: 'reservation/view/edit',
+>>>>>>> 24f22fabac5c2351b1c1d55dfbd83bb0fb3abbc3
     pathMatch: 'full',
     component:ReservationEditComponent
   },
   {
+<<<<<<< HEAD
+=======
     path: 'loyalties',
     pathMatch: 'full',
     component:LoyaltiesComponent
   },
   {
+>>>>>>> 24f22fabac5c2351b1c1d55dfbd83bb0fb3abbc3
     path: '',
     pathMatch: 'full',
     component: HomeComponent

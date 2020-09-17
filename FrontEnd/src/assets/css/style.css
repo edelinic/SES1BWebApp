@@ -51,6 +51,8 @@ h1, h2, h3, h4, h5,
   }
 }
 
+<<<<<<< HEAD
+=======
 
 
 .site-section-preorder{
@@ -68,6 +70,7 @@ h1, h2, h3, h4, h5,
   padding-bottom:4px;
 }
 
+>>>>>>> 24f22fabac5c2351b1c1d55dfbd83bb0fb3abbc3
 .site-navbar-light .navbar-nav > .nav-item > .nav-link {
   font-size: 13px;
   text-transform: uppercase;
@@ -490,6 +493,11 @@ textarea.form-control {
   }
 }
 
+<<<<<<< HEAD
+.site-tab-nav li a {
+  text-transform: uppercase;
+  font-size: 14px;
+=======
 .btn-preOrder{
   width:100%;
 }
@@ -506,6 +514,7 @@ textarea.form-control {
 .site-tab-nav li a {
   text-transform: uppercase;
   font-size: 25px;
+>>>>>>> 24f22fabac5c2351b1c1d55dfbd83bb0fb3abbc3
   letter-spacing: .2em;
   color: #ccc;
   border: 2px solid #ccc;
@@ -1003,7 +1012,10 @@ textarea.form-control {
     stroke-dashoffset: -136px;
   }
 }
+<<<<<<< HEAD
+=======
 
 .userAccount{
   font-size: 12px;
 }
+>>>>>>> 24f22fabac5c2351b1c1d55dfbd83bb0fb3abbc3
