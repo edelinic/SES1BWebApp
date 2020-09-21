@@ -21,6 +21,7 @@ namespace SES1B
 {
     public class Startup
     {
+        readonly string restaurantSpecificOrigins = "_restaurantSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -31,6 +32,17 @@ namespace SES1B
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: restaurantSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:4200")
+                                                           .AllowAnyHeader()
+                                                           .AllowAnyMethod(); ;
+                                  });
+            });
+
             services.AddControllers();
             services.AddDbContext<RestaurantContext>();
             
@@ -55,6 +67,7 @@ namespace SES1B
 
             app.UseHttpsRedirection();
 
+            app.UseCors(restaurantSpecificOrigins);
             app.UseRouting();
 
             app.UseAuthorization();

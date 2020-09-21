@@ -19,8 +19,8 @@ namespace SES1B.Controllers
         }
 
 
-        [HttpPost("/login")]
-        public ActionResult<UserDTO> Login([FromForm] UserDTO userDto)
+        [HttpPost("login")]
+        public ActionResult<UserDTO> Login([FromBody] UserDTO userDto)
         {
             return _userService.Login(userDto);
         }

@@ -11,6 +11,9 @@ import { ReservationViewComponent } from './components/reservation-view/reservat
 import { ReservationPreorderComponent } from './components/reservation-preorder/reservation-preorder.component';
 import { ReservationEditComponent } from './components/reservation-edit/reservation-edit.component';
 import { LoyaltiesComponent } from './components/loyalties/loyalties.component';
+import { UserService } from './core/user/user.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,9 +30,12 @@ import { LoyaltiesComponent } from './components/loyalties/loyalties.component';
   
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
