@@ -7,7 +7,6 @@
 /Users/cmm/Projects/SES1BWebApp/SES1B/bin/Release/netcoreapp3.1/SES1B.dll
 /Users/cmm/Projects/SES1BWebApp/SES1B/bin/Release/netcoreapp3.1/SES1B.pdb
 /Users/cmm/Projects/SES1BWebApp/SES1B/bin/Release/netcoreapp3.1/SES1B.Views.dll
-/Users/cmm/Projects/SES1BWebApp/SES1B/bin/Release/netcoreapp3.1/SES1B.Views.pdb
 /Users/cmm/Projects/SES1BWebApp/SES1B/bin/Release/netcoreapp3.1/Microsoft.AspNetCore.Razor.Language.dll
 /Users/cmm/Projects/SES1BWebApp/SES1B/bin/Release/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/cmm/Projects/SES1BWebApp/SES1B/bin/Release/netcoreapp3.1/Microsoft.Bcl.HashCode.dll

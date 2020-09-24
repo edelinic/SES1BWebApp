@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+
 namespace SES1B.Models
 {
     
@@ -12,4 +13,7 @@ namespace SES1B.Models
             public sbyte? Availability { get; set; }
         }
     }
+
+
+
 

@@ -17,14 +17,18 @@ namespace SES1B.Models
 
         public virtual DbSet<MenuItems> MenuItems { get; set; }
         public virtual DbSet<Order> Order {get; set;}
+
         public virtual DbSet<User> User { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
+#pragma warning disable CS1030 // #warning directive
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseMySql("server=restaurantdb.cvz3e6ne8iwm.ap-southeast-2.rds.amazonaws.com;database=Restaurant;uid=root;pwd=$E$1Bcovid19", x => x.ServerVersion("8.0.17-mysql"));
+#pragma warning restore CS1030 // #warning directive
             }
         }
 
@@ -71,6 +75,7 @@ namespace SES1B.Models
                     .HasColumnType("int(11)");
             });
 
+
             //Model builder for the User 
             modelBuilder.Entity<User>(entity =>
            {
@@ -106,7 +111,7 @@ namespace SES1B.Models
                .HasColumnType("varchar(10)");
            });
 
-
+            OnModelCreatingPartial(modelBuilder);
         }
 
         private void HasColumnType(string v)

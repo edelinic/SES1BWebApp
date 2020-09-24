@@ -17,6 +17,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+<<<<<<< HEAD
+=======
+            
+>>>>>>> d0a6873c1d2e04e8b06afb33d0349cf0ed9abcc6
             "outputPath": "dist/SES1BFrontend",
             "index": "src/index.html",
             "main": "src/main.ts",
