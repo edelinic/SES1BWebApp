@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{E5B965AD-EDDB-4D0C-ADB0-AA441EF03F8C}|Default">
+  <MonoDevelop.Ide.ItemProperties.SES1B PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SES1B/Models/RestaurantContext.cs">
+    <Files>
+      <File FileName="SES1B/Models/RestaurantContext.cs" Line="23" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="SES1B" expanded="True">
+            <Node name="SES1B" expanded="True">
+              <Node name="Models" expanded="True">
+                <Node name="RestaurantContext.cs" selected="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
