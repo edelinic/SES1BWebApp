@@ -7,5 +7,6 @@ namespace SES1BBackendAPI.Interface.Domain
     public interface IRepository
     {
         IQueryable<User> GetUser();
+        IQueryable<Orderitems> GetOrderItems();
     }
 }
