@@ -23,11 +23,11 @@ namespace SES1BBackendAPI.Service
 
         protected bool ValidateOrderItems(OrderItemsDTO orderItemsDTO)
         {
-            if (orderItemsDTO.Quantity == null)
+            if (orderItemsDTO.Quantity == 0)
             {
 
             }
-            if (orderItemsDTO.MenuItemId == null)
+            if (orderItemsDTO.MenuItemId == 0)
             {
                 
             }
@@ -35,9 +35,9 @@ namespace SES1BBackendAPI.Service
         }
         public OrderItemsDTO CreateOrder(OrderItemsDTO orderItemsDTO)
         {
-            _repository.GetOrderItems().Add(OrderId);
-            _dataContext.SaveChanges();
-            return OrderId;
+            //_repository.GetOrderItems().Add(OrderId);
+            //_dataContext.SaveChanges();
+            return orderItemsDTO;
         }
         
         public OrderItemsDTO EditOrder(OrderItemsDTO orderItemsDTO)

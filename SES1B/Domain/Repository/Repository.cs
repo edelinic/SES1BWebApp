@@ -16,7 +16,7 @@ namespace SES1BBackendAPI.Domain.Repository
 
         public IQueryable<Menuitems> GetMenuItems()
         {
-            return _dataContext. \Menuitems;
+            return _dataContext.Menuitems;
         }
 
         public IQueryable<Order> GetOrders()
