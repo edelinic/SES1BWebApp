@@ -45,7 +45,7 @@ namespace SES1BBackendAPI.Service
             }
 
 
-var booking = _repository.PostBooking(bookingDTO);
+//var booking = _repository.PostBooking(bookingDTO);
 
 //This should push it to the database according to my unserstanding 
             return bookingDTO;// need to push it the db
