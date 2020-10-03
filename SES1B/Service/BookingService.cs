@@ -38,21 +38,14 @@ namespace SES1BBackendAPI.Service
         {
  // Am not sure if the booking DTO is the resource for the frontend input
 //but I will work with it like this for now
-
-
 //Checking all info is valid
             if (bookingDTO.Time == null || bookingDTO.Date == null )
             {
                 return bookingDTO;
             }
 
-//making sure the e-mail is valid
-//It is not in the DTO tho ?
-//IsValidEmail
 
-
-
-
+var booking = _repository.PostBooking(bookingDTO);
 
 //This should push it to the database according to my unserstanding 
             return bookingDTO;// need to push it the db

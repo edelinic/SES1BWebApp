@@ -7,6 +7,7 @@ namespace SES1B.Shared.DTO
 {
     public class BookingDTO
     {
+        public string Email { get; set; }
         public int BookingId { get; set; }
         public DateTime Date { get; set; }
         public TimeSpan Time { get; set; }
