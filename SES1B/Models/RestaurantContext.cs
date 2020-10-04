@@ -17,11 +17,13 @@ namespace SES1B.Models
 
         public virtual DbSet<MenuItems> MenuItems { get; set; }
         public virtual DbSet<Order> Order {get; set;}
+        public virtual DbSet<OrderItems> OrderItems {get; set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
+
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseMySql("server=restaurantdb.cvz3e6ne8iwm.ap-southeast-2.rds.amazonaws.com;database=Restaurant;uid=root;pwd=$E$1Bcovid19", x => x.ServerVersion("8.0.17-mysql"));
             }
@@ -71,6 +73,24 @@ namespace SES1B.Models
             });
 
             OnModelCreatingPartial(modelBuilder);
+
+            
+            //model builder for OrderItems
+            modelBuilder.Entity<OrderItems>(entity =>
+            {
+                entity.Property(e => e.OrderId)
+                    .HasColumnName("OrderId")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.Quantity)
+                    .HasColumnName("Quantity")
+                    .HasColumnType("int(11)");    
+
+                entity.Property(e => e.MenuItemId)
+                    .HasColumnName("MenuItemId")
+                    .HasColumnType("int(11)");  
+            });
+
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
