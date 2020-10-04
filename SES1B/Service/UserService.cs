@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using SES1B.Interface.Service;
 using SES1B.Shared.DTO;
+using SES1BBackendAPI.Domain.Entity;
 using SES1BBackendAPI.Domain.Repository;
 using SES1BBackendAPI.Interface.Domain;
 using System;
@@ -65,21 +66,42 @@ namespace SES1BBackendAPI.Service
 
         public UserDTO Register(UserDTO userDto)
         {
-
+            var user = _repository.PostUser().WithEmail(userDto.Email);
 
             // First Name Shouldnt be empty
-            if (userDto.FirstName == null) { 
-            
+            if (userDto.FirstName == null) {
+               userDto.Password = string.Empty;
             }
             // Last Name Shouldnt be empty
-            if (userDto.LastName == null)
-            {
-
+            if (userDto.LastName == null){
+                userDto.Password = string.Empty;
             }
 
             // Verify Email Format
+            if (userDto.Email == null){
+                userDto.Password = string.Empty;
+            }
             // Password Shouldnt be empty
+            if (userDto.Password == null){
+                userDto.Password = string.Empty;
+            }
+
+            if (userDto.Dob == null){
+                userDto.Password = string.Empty;
+            }
+
+            if (userDto.PhoneNumber == null){
+                userDto.Password = string.Empty;
+            }
             // Convert DTO to entity, call save user from the repository (save the data Check previous work)
+            // if correct, save the user details
+
+            user.FirstName = userDto.FirstName;
+            user.LastName = userDto.LastName;
+            user.Password = userDto.Password;
+            user.Email = userDto.Email;
+            user.Dob = userDto.Dob;
+            user.PhoneNumber = userDto.PhoneNumber;
             return userDto;
         }
     }
