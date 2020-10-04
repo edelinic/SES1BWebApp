@@ -12,6 +12,7 @@ namespace SES1BBackendAPI.Domain.Entity
         }
 
         public int BookingId { get; set; }
+        public string Email { get; set; }
         public DateTime Date { get; set; }
         public TimeSpan Time { get; set; }
         public int NumberOfPeople { get; set; }
