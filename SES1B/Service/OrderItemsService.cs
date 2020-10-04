@@ -25,18 +25,17 @@ namespace SES1BBackendAPI.Service
         {
             if (orderItemsDTO.Quantity == 0)
             {
-
+                return false;
             }
             if (orderItemsDTO.MenuItemId == 0)
             {
-                
+                return false;
             }
             return true;
         }
+
         public OrderItemsDTO CreateOrder(OrderItemsDTO orderItemsDTO)
         {
-            //_repository.GetOrderItems().Add(OrderId);
-            //_dataContext.SaveChanges();
             return orderItemsDTO;
         }
         
@@ -64,8 +63,7 @@ namespace SES1BBackendAPI.Service
 
         public OrderItemsDTO DeleteOrder(OrderItemsDTO orderItemsDTO)
         {
-            var OrderItems = _repository.GetOrderItems().WithOrderItemsId(orderItemsDTO.OrderId);
-            OrderItems.remove(OrderItems);
+            // var OrderItems = _repository.PostOrderItems();
 
             return orderItemsDTO;
         }
