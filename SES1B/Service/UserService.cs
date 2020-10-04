@@ -16,7 +16,6 @@ namespace SES1BBackendAPI.Service
         // Every Service will have this Irepository
         // Automatically injected during runtime and the config of this will be in the startup.cs
         
-        
         IRepository _repository;
         public UserService(IRepository repository)
         {
