@@ -19,6 +19,8 @@ namespace SES1B.Controllers
             _bookingService = bookingService;
         }
 
+
+
         [HttpPost("/booking")]
         public ActionResult<BookingDTO> Booking([FromForm] BookingDTO bookingDTO)
         {
