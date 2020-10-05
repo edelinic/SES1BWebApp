@@ -44,14 +44,14 @@ namespace SES1BBackendAPI.Service
             // if email not registered; return false
             if (user == null) {
                 userDto.Password = string.Empty;
-                userDto.IsLoginSuccess = false;
+                userDto.IsSuccess = false;
                 return userDto;
             }
 
             // if password not correct; return false
             if (user.Password != userDto.Password) {
                 userDto.Password = string.Empty;
-                userDto.IsLoginSuccess = false;
+                userDto.IsSuccess = false;
                 return userDto;
             }
 
@@ -60,48 +60,83 @@ namespace SES1BBackendAPI.Service
             userDto.LastName = user.LastName;
             userDto.Password = string.Empty;
             userDto.Token = Guid.NewGuid().ToString();
-            userDto.IsLoginSuccess = true;
+            userDto.IsSuccess = true;
             return userDto;
         }
 
         public UserDTO Register(UserDTO userDto)
         {
-            var user = _repository.PostUser().WithEmail(userDto.Email);
+            
+            bool dataComplete = true;
 
-            // First Name Shouldnt be empty
-            if (userDto.FirstName == null) {
-               userDto.Password = string.Empty;
-            }
-            // Last Name Shouldnt be empty
-            if (userDto.LastName == null){
+            if (string.IsNullOrWhiteSpace(userDto.FirstName)) {
                 userDto.Password = string.Empty;
+                userDto.Messages.Add("First Name shouldnt be empty");
+                dataComplete = false;
             }
 
-            // Verify Email Format
-            if (userDto.Email == null){
+            if (string.IsNullOrWhiteSpace(userDto.LastName)){
                 userDto.Password = string.Empty;
+                userDto.Messages.Add("Last Name shouldnt be empty");
+                dataComplete = false;
             }
-            // Password Shouldnt be empty
-            if (userDto.Password == null){
+
+            if (string.IsNullOrWhiteSpace(userDto.Email)){
                 userDto.Password = string.Empty;
+                userDto.Messages.Add("Email shouldnt be empty");
+                dataComplete = false;
+            }
+
+            if (string.IsNullOrWhiteSpace(userDto.Password)){
+                userDto.Password = string.Empty;
+                userDto.Messages.Add("Password shouldnt be empty");
+                dataComplete = false;
             }
 
             if (userDto.Dob == null){
                 userDto.Password = string.Empty;
+                userDto.Messages.Add("Date of Birth shouldnt be empty");
+                dataComplete = false;
             }
 
-            if (userDto.PhoneNumber == null){
+            if (string.IsNullOrWhiteSpace(userDto.PhoneNumber)){
                 userDto.Password = string.Empty;
+                userDto.Messages.Add("Phone Number shouldnt be empty");
+                dataComplete = false;
             }
+
+            
+            // Makes sure that all if cases pass
+            if (!dataComplete)
+            {
+                userDto.IsSuccess = false;
+                return userDto;
+            }
+
+            var userEmail = _repository.GetUser().WithEmail(userDto.Email);
+            if (userEmail != null)
+            {
+                userDto.IsSuccess = false;
+                userDto.Messages.Add("You already have this email signed up");
+                return userDto;
+            }
+
             // Convert DTO to entity, call save user from the repository (save the data Check previous work)
             // if correct, save the user details
+            var user = new User() {
+                FirstName = userDto.FirstName,
+                LastName = userDto.LastName,
+                Email = userDto.Email,
+                Password = userDto.Password,
+                Dob = userDto.Dob,
+                PhoneNumber = userDto.PhoneNumber,
+                LoyaltyMemberNumber = userDto.LoyaltyMemberNumber,
+            };
 
-            user.FirstName = userDto.FirstName;
-            user.LastName = userDto.LastName;
-            user.Password = userDto.Password;
-            user.Email = userDto.Email;
-            user.Dob = userDto.Dob;
-            user.PhoneNumber = userDto.PhoneNumber;
+            _repository.PostUser(user);
+            userDto.UserId = user.UserId;
+            userDto.IsSuccess = true;
+            userDto.Messages.Add("User has registered successfully");
             return userDto;
         }
     }

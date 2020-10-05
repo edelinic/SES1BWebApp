@@ -8,6 +8,10 @@ namespace SES1B.Shared.DTO
 {
     public class UserDTO
     {
+        public UserDTO() {
+            Messages = new List<string>();
+
+        }
         public int UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -18,6 +22,8 @@ namespace SES1B.Shared.DTO
         public string LoyaltyMemberNumber { get; set; }
         public string Token { get; set; }
         public List<BookingDTO> Booking { get; set; }
-        public bool IsLoginSuccess { get; set; }
+
+        public List<string> Messages { get; set; }
+        public bool IsSuccess { get; set; }
     }
 }

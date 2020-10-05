@@ -43,6 +43,36 @@ namespace SES1BBackendAPI.Domain.Repository
         {
             return _dataContext.User;
         }
+        public void PostUser(User user) 
+        {
+            if (user.UserId <= 0) 
+            {
+                _dataContext.Add(user); 
+            }
+            else
+            {
+                _dataContext.Update(user);
+            }
 
+            _dataContext.SaveChanges();
+        }
+        
+        public void PostBooking(Booking booking)
+        {
+            if (booking.BookingId <= 0)
+            {
+                _dataContext.Add(booking);
+            }
+            else {
+                _dataContext.Update(booking);
+            }
+
+            _dataContext.SaveChanges();
+        }
+
+        public void PostOrderItems(Orderitems orderitems) 
+        { 
+
+        }
     }
 }

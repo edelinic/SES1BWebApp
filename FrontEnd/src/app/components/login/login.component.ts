@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
       this.userService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe(result => {
         console.log(result);
-        if(result.isLoginSuccess == true){
+        if(result.isSuccess == true){
           this.router.navigate(['/'])
         }
         else{

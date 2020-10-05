@@ -25,8 +25,8 @@ namespace SES1B.Controllers
             return _userService.Login(userDto);
         }
 
-        [HttpPost("/register")]
-        public ActionResult<UserDTO> Register([FromForm] UserDTO userDto)
+        [HttpPost("registration")]
+        public ActionResult<UserDTO> Register([FromBody] UserDTO userDto)
         {
             return _userService.Register(userDto);
         }

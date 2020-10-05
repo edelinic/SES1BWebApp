@@ -5,6 +5,9 @@ export class userDto {
     email: string;
     password: string;
     loyaltyMemberNumber: string;
+    dob: Date;
+    phoneNumber: string;
     token: string;
-    isLoginSuccess: boolean;
+    messages: string[];
+    isSuccess: boolean;
 }
