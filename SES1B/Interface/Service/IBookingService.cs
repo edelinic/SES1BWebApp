@@ -10,6 +10,6 @@ namespace SES1B.Interface.Service
     public interface IBookingService
     {
         
-          BookingDTO booking(BookingDTO bookingDTO);
+          BookingDTO createBooking(BookingDTO bookingDTO);
     }
 }

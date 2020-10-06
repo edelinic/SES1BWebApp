@@ -61,14 +61,16 @@ namespace SES1BBackendAPI.Service
             userDto.Password = string.Empty;
             userDto.Token = Guid.NewGuid().ToString();
             userDto.IsSuccess = true;
+            userDto.UserId = user.UserId;
             return userDto;
         }
 
         public UserDTO Register(UserDTO userDto)
         {
-            
+            // make new bool to check if the data is complete
             bool dataComplete = true;
 
+            // make sure all the input exists or is valid
             if (string.IsNullOrWhiteSpace(userDto.FirstName)) {
                 userDto.Password = string.Empty;
                 userDto.Messages.Add("First Name shouldnt be empty");

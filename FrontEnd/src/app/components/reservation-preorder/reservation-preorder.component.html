@@ -1,36 +1,67 @@
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbarAccount navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
-        <div class="collapse navbar-collapse" id="site-nav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item-userAccount"><a href="login" class="nav-link userAccount">Sign in</a></li>
-                <li class="nav-item-userAccount"><a href="registration" class="nav-link userAccount">Register for an
-                        account</a></li>
-                <li class="nav-item-userAccount"><label class="nav-link userAccount">Account:</label></li>
-            </ul>
-        </div>
-    </nav>
-    <nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Le Bistrot d'Andre</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav"
-                aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <img src="assets/menuIcon.png" class="menuIcon"> Menu
-            </button>
+  <nav
+  class="navbarAccount navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light"
+  id="site-navbar"
+>
+  <div class="collapse navbar-collapse" id="site-nav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item-userAccount">
+        <a routerLink="/login" class="nav-link userAccount">Sign in</a>
+      </li>
+      <li class="nav-item-userAccount">
+        <a routerLink="/registration" class="nav-link userAccount"
+          >Register for an account</a
+        >
+      </li>
+      <li class="nav-item-userAccount">
+        <label class="nav-link userAccount">Account: {{userName}}</label>
+      </li>
+    </ul>
+  </div>
+</nav>
+<nav
+  class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light"
+  id="site-navbar"
+>
+  <div class="container">
+    <a class="navbar-brand" routerLink="">Le Bistrot d'Andre</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#site-nav"
+      aria-controls="site-nav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <img src="assets/menuIcon.png" class="menuIcon" /> Menu
+    </button>
 
-            <div class="collapse navbar-collapse" id="site-nav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item "><a href="" class="nav-link">Home</a></li>
-                    <li class="nav-item active"><a href="reservation" class="nav-link">Book a Table</a></li>
-                    <li class="nav-item"><a href="reservation/view" class="nav-link">My Reservations</a></li>
-                    <li class="nav-item"><a href="loyalties" class="nav-link">Loyalties</a></li>
-                    <li class="nav-item"><a href="#section-menu" class="nav-link">Menu</a></li>
-                    <li class="nav-item"><a href="#site-aboutUs" class="nav-link">About us</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- Navigation Bar END -->
+    <div class="collapse navbar-collapse" id="site-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item ">
+          <a routerLink="" class="nav-link">Home</a></li>
+        <li class="nav-item">
+          <a routerLink="/reservation " class="nav-link active">Book a Table</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/reservation/view" class="nav-link">My Reservations</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/loyalties" class="nav-link">Loyalties</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="" class="nav-link">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="" class="nav-link">About us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Navigation Bar END -->
 
 
     <!-- Featured -->

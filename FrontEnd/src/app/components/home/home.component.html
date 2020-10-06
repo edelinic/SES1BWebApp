@@ -11,15 +11,15 @@
     <div class="collapse navbar-collapse" id="site-nav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item-userAccount">
-          <a href="login" class="nav-link userAccount">Sign in</a>
+          <a routerLink="/login" class="nav-link userAccount">Sign in</a>
         </li>
         <li class="nav-item-userAccount">
-          <a href="registration" class="nav-link userAccount"
+          <a routerLink="/registration" class="nav-link userAccount"
             >Register for an account</a
           >
         </li>
         <li class="nav-item-userAccount">
-          <label class="nav-link userAccount">Account:</label>
+          <label class="nav-link userAccount">Account: {{userName}}</label>
         </li>
       </ul>
     </div>
@@ -29,7 +29,7 @@
     id="site-navbar"
   >
     <div class="container">
-      <a class="navbar-brand" href="index.html">Le Bistrot d'Andre</a>
+      <a class="navbar-brand" routerLink="">Le Bistrot d'Andre</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -44,21 +44,22 @@
 
       <div class="collapse navbar-collapse" id="site-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="" class="nav-link">Home</a></li>
+          <li class="nav-item active">
+            <a routerLink="" class="nav-link">Home</a></li>
           <li class="nav-item">
-            <a href="reservation" class="nav-link">Book a Table</a>
+            <a routerLink="/reservation" class="nav-link">Book a Table</a>
           </li>
           <li class="nav-item">
-            <a href="reservation/view" class="nav-link">My Reservations</a>
+            <a routerLink="/reservation/view" class="nav-link">My Reservations</a>
           </li>
           <li class="nav-item">
-            <a href="loyalties" class="nav-link">Loyalties</a>
+            <a routerLink="/loyalties" class="nav-link">Loyalties</a>
           </li>
           <li class="nav-item">
-            <a href="#section-menu" class="nav-link">Menu</a>
+            <a routerLink="" class="nav-link">Menu</a>
           </li>
           <li class="nav-item">
-            <a href="#site-aboutUs" class="nav-link">About us</a>
+            <a routerLink="" class="nav-link">About us</a>
           </li>
         </ul>
       </div>
@@ -82,7 +83,7 @@
             Book a Reservation, Preorder &amp; enjoy our delicious food.
           </h2>
           <p>
-            <a href="reservation" class="btn btn-outline-white btn-lg"
+            <a routerLink="reservation" class="btn btn-outline-white btn-lg"
               >Book a table</a
             >
           </p>
