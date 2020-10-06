@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SES1BBackendAPI.Domain.Repository;
 using SES1BBackendAPI.Interface.Domain;
 using SES1B.Shared.DTO;
-
+using SES1BBackendAPI.Domain.Entity;
 
 namespace SES1BBackendAPI.Service
 {
@@ -34,20 +34,47 @@ namespace SES1BBackendAPI.Service
             _repository = repository;
         }
 
-        public BookingDTO booking(BookingDTO bookingDTO)
+        public BookingDTO createBooking(BookingDTO bookingDTO)
         {
- // Am not sure if the booking DTO is the resource for the frontend input
-//but I will work with it like this for now
-//Checking all info is valid
-            if (bookingDTO.Time == null || bookingDTO.Date == null )
+            // make new bool to check if the data is complete
+            bool dataComplete = true;
+
+            // make sure all the input are NOT Empty
+           
+            if (bookingDTO.NumberOfPeople <= 1)
+            {
+                dataComplete = false;
+            }
+
+            if (bookingDTO.Date == null)
+            {
+                dataComplete = false;
+            }
+            
+            if (bookingDTO.Time == null)
+            {
+                dataComplete = false;
+            }
+
+            // Makes sure that all if cases pass
+            if (!dataComplete)
             {
                 return bookingDTO;
             }
+            
+            //var booking = new User()
+            //{
+            //    FirstName = userDTO.FirstName,
+            //    LastName = userDTO.LastName,
+            //    Email = userDTO.Email,
+            //    PhoneNumber = userDTO.PhoneNumber,
+                
+            //};
 
 
-//var booking = _repository.PostBooking(bookingDTO);
 
-//This should push it to the database according to my unserstanding 
+
+            //This should push it to the database according to my unserstanding 
             return bookingDTO;// need to push it the db
         }
 

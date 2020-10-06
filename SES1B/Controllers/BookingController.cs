@@ -22,9 +22,9 @@ namespace SES1B.Controllers
 
 
         [HttpPost("/booking")]
-        public ActionResult<BookingDTO> Booking([FromForm] BookingDTO bookingDTO)
+        public ActionResult<BookingDTO> createBooking([FromForm] BookingDTO bookingDTO, UserDTO userDTO)
         {
-            return _bookingService.booking(bookingDTO);
+            return _bookingService.createBooking(bookingDTO);
         }
 
     }

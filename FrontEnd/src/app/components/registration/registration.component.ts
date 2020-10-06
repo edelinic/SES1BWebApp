@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/core/user/user.service';
 import { Router } from '@angular/router';
 import { userDto } from 'src/app/model/userDto';
+import { state } from 'src/app/model/state';
 
 @Component({
   selector: 'app-registration',
@@ -15,12 +16,19 @@ export class RegistrationComponent implements OnInit {
   messages: string[];
   registrationForm: FormGroup;
   buttonClicked: boolean = false;
-
+  userName: string;
 
   constructor(private titleService:Title,
               private userService: UserService,
               private router: Router) {
     this.titleService.setTitle("eDine - Register");
+    if(state.userFirstName == null)
+    {
+      this.userName = "Not Logged in"
+    }
+    else{
+      this.userName = state.userFirstName + " " + state.userLastName;
+    }
    }
 
   ngOnInit(): void {
