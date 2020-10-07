@@ -11,7 +11,7 @@ namespace SES1BBackendAPI.Interface.Domain
         void PostBooking(Booking booking);
         IQueryable<Orderitems> GetOrderItems();
         void PostOrderItems(Orderitems orderitems);
-
+        void RemoveOrderItems(Orderitems orderItems);
     }
 
 

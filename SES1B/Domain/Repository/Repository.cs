@@ -63,7 +63,8 @@ namespace SES1BBackendAPI.Domain.Repository
             {
                 _dataContext.Add(booking);
             }
-            else {
+            else 
+            {
                 _dataContext.Update(booking);
             }
 
@@ -72,7 +73,22 @@ namespace SES1BBackendAPI.Domain.Repository
 
         public void PostOrderItems(Orderitems orderitems) 
         { 
+            if (orderitems.OrderId <= 0)
+            {
+                _dataContext.Add(orderitems);
+            }
+            else 
+            {
+                _dataContext.Update(orderitems);
+            }
 
+            _dataContext.SaveChanges();
+        }
+
+        public void RemoveOrderItems(Orderitems orderitems) 
+        { 
+            _dataContext.Remove(orderitems);
+            _dataContext.SaveChanges();
         }
     }
 }
