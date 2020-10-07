@@ -71,6 +71,26 @@ namespace SES1BBackendAPI.Domain.Repository
             _dataContext.SaveChanges();
         }
 
+        public void PostOrder(Order order) 
+        { 
+            if (order.OrderId <= 0)
+            {
+                _dataContext.Add(order);
+            }
+            else 
+            {
+                _dataContext.Update(order);
+            }
+
+            _dataContext.SaveChanges();
+        }
+
+        public void RemoveOrder(Order order) 
+        { 
+            _dataContext.Remove(order);
+            _dataContext.SaveChanges();
+        }
+
         public void PostOrderItems(Orderitems orderitems) 
         { 
             if (orderitems.OrderId <= 0)
@@ -88,6 +108,26 @@ namespace SES1BBackendAPI.Domain.Repository
         public void RemoveOrderItems(Orderitems orderitems) 
         { 
             _dataContext.Remove(orderitems);
+            _dataContext.SaveChanges();
+        }
+
+        public void PostTable(Table table) 
+        { 
+            if (table.TableId <= 0)
+            {
+                _dataContext.Add(table);
+            }
+            else 
+            {
+                _dataContext.Update(table);
+            }
+
+            _dataContext.SaveChanges();
+        }
+
+        public void RemoveTable(Table table) 
+        { 
+            _dataContext.Remove(table);
             _dataContext.SaveChanges();
         }
     }

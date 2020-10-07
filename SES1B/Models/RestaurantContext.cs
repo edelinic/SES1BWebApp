@@ -18,6 +18,7 @@ namespace SES1B.Models
         public virtual DbSet<MenuItems> MenuItems { get; set; }
         public virtual DbSet<Order> Order {get; set;}
         public virtual DbSet<OrderItems> OrderItems {get; set;}
+        public virtual DbSet<Table> Table {get; set;}
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -88,6 +89,26 @@ namespace SES1B.Models
 
                 entity.Property(e => e.MenuItemId)
                     .HasColumnName("MenuItemId")
+                    .HasColumnType("int(11)");  
+            });
+
+            //model builder for Table
+            modelBuilder.Entity<Table>(entity =>
+            {
+                entity.Property(e => e.TableId)
+                    .HasColumnName("TableId")
+                    .HasColumnType("int(11)");
+
+                entity.Property(e => e.Seating)
+                    .HasColumnName("Seating")
+                    .HasColumnType("int(11)");    
+
+                entity.Property(e => e.IsReserved)
+                    .HasColumnName("IsReserved")
+                    .HasColumnType("bool");  
+
+                entity.Property(e => e.BookingId)
+                    .HasColumnName("BookingId")
                     .HasColumnType("int(11)");  
             });
 

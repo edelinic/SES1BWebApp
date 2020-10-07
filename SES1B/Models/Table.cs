@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
-namespace SES1BBackendAPI.Domain.Entity
+namespace SES1B.Models
 {
     public partial class Table
     {
@@ -9,7 +9,5 @@ namespace SES1BBackendAPI.Domain.Entity
         public int Seating { get; set; }
         public bool IsReserved { get; set; }
         public int BookingId { get; set; }
-
-        public virtual Booking Booking { get; set; }
     }
 }

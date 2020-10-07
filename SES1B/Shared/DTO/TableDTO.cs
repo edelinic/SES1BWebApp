@@ -10,8 +10,8 @@ namespace SES1B.Shared.DTO
     {
         public int TableId { get; set; }
         public int Seating { get; set; }
-        public byte IsReserved { get; set; }
-        public int? BookingId { get; set; }
+        public bool IsReserved { get; set; }
+        public int BookingId { get; set; }
 
         public List<BookingDTO> Booking { get; set; }
     }

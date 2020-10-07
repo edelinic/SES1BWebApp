@@ -9,9 +9,15 @@ namespace SES1BBackendAPI.Interface.Domain
         IQueryable<User> GetUser();
         void PostUser(User user);
         void PostBooking(Booking booking);
+        IQueryable<Order> GetOrders();
+        void PostOrder(Order order);
+        void RemoveOrder(Order order);
         IQueryable<Orderitems> GetOrderItems();
         void PostOrderItems(Orderitems orderitems);
         void RemoveOrderItems(Orderitems orderItems);
+        IQueryable<Table> GetTables();
+        void PostTable(Table table);
+        void RemoveTable(Table table);
     }
 
 
