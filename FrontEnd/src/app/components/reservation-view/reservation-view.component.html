@@ -62,15 +62,62 @@
   </div>
 </nav>
 <!-- Navigation Bar END -->
-
-
 <div class="container">
-    <div class="row mb-5">
-      <div class="col-md-12">
+  <div class="row">
+    <div class="col-md-12 text-center mb-5">
+<h1> Your Reservations </h1>
+</div>
+</div>
+</div>
+
+<div class="modal-dialog modal-lg" role="document">
+  <div class="modal-content">
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="bg-image" style="background-image: url(images/reservation_1.jpg);"></div>
+
         <div class="row">
           <h2 class="site-heading-2"> Bookings for {{userName}} </h2>
+        </div>
+      </div>
+    </div>
+  
+<div class="row">
+  <div class="col-sm">
+  <label for="Hostname"> Host Name  </label>
+    <input type="text" class="form-control" formControlName="hostname">
+    </div>
+  </div>
+
+<div class= "row">
+  <div class="col-sm">
+    <label for="Restaurant Location"> Restaurant Location </label>
+    <input type="text" class="form-control"
+    formControlName="restaurantlocation">
+    </div>
+    </div>
+  
+ 
+  <div class="row">
+    <div class="col-sm">
+      <label for="PartySize"> Party Size </label>
+      <input type="text" class="form-control" formControlName="partysize">
+      </div>
+      </div>
+  
+  <div class="row">
+    <div class="col-sm">
+      <label for="Date"> Date </label>
+      <input type="text" class="form-control" formControlName="date">
+      </div>
+
+      <div class="col-sm">
+        <label for="Time"> Time </label>
+        <input type="text" class="form-control" formControlName="time">
+        </div>
 </div>
-</div>
+    </div>
 </div>
 </div>
 
