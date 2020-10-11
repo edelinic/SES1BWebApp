@@ -8,7 +8,10 @@ import { state } from 'src/app/model/state';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
+  
+  
   userName: string;
 
 

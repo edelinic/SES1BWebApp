@@ -1,9 +1,6 @@
 <body>
     <!-- Navigation Bar -->
-  <nav
-  class="navbarAccount navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light"
-  id="site-navbar"
->
+  <nav class="navbarAccount navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
   <div class="collapse navbar-collapse" id="site-nav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item-userAccount">
@@ -72,9 +69,19 @@
                     <div class="col-lg-12">
                         <div class="bg-image" style="background-image: url(images/reservation_1.jpg);"></div>
                     </div>
-                    <div class="col-lg-12 p-5">
-                        <h1 class="mb-4">Book a Table</h1>
-                        <!-- <form action="#" method="post"> -->
+                    
+                    <!-- USER NOT SIGNED IN -->
+                    <div class="col-lg-12 p-5" *ngIf="signedIn == false">
+                        <h1 class="mb-4 text-center">Please sign in to book a table</h1>
+                        
+                    </div>
+                    <!-- USER NOT SIGNED IN END -->
+
+                    <!-- USER SIGNED IN -->
+                    <div class="col-lg-12 p-5" *ngIf="signedIn == true">
+                        <h1 class="mb-4">Book a Table. </h1>
+                        <h5 class="mb-4">Signed in as: {{userName}}</h5>
+                        <!-- <form action="#" method="post"> -->          
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <label for="m_fname">First Name</label>
@@ -85,12 +92,6 @@
                                     <input type="text" class="form-control" id="m_lname" value={{userLastName}} disabled>
                                 </div>
                             </div>
-                            <!-- <div class="row">
-                                <div class="col-md-12 form-group">
-                                    <label for="m_email">Email</label> 
-                                    <input type="email" class="form-control" id="m_email" value={{userEmail}} disabled>
-                                </div>
-                            </div> -->
                             <div class="row">
                                 <div class="col-md-12 form-group">
                                     <label for="m_people">How Many People</label>
@@ -114,7 +115,7 @@
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <label for="m_date">Date</label>
-                                    <input type="date" class="form-control" id="m_date">
+                                    <input  type="date" class="form-control" id="m_date">
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <label for="m_time">Time</label>

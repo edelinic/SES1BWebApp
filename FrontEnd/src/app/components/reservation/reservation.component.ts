@@ -8,12 +8,14 @@ import { state } from 'src/app/model/state';
   styleUrls: ['./reservation.component.scss']
 })
 export class ReservationComponent implements OnInit {
+  signedIn: boolean;
   userFirstName: string;
   userLastName: string;
   userName: string;
   userEmail: string;
   userPhone: string;
-
+  today=new Date();
+  
   constructor(private titleService:Title) {
     this.titleService.setTitle("eDine - Book a Table");
     if(state.userFirstName == null)
@@ -30,12 +32,14 @@ export class ReservationComponent implements OnInit {
       this.userLastName = "N/A"
       this.userEmail = "N/A"
       this.userPhone = "N/A"
+      this.signedIn = false;
     }
     else{
       this.userFirstName = state.userFirstName;
       this.userLastName = state.userLastName;
       this.userEmail = state.userEmail;
       this.userPhone = state.userPhone;
+      this.signedIn = true;
     }  
    }
 
