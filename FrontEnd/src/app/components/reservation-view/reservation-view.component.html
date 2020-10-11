@@ -1,70 +1,137 @@
 <body>
-    <!-- Navigation Bar -->
-  <nav
-  class="navbarAccount navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light"
-  id="site-navbar"
->
-  <div class="collapse navbar-collapse" id="site-nav">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item-userAccount">
-        <a routerLink="/login" class="nav-link userAccount">Sign in</a>
-      </li>
-      <li class="nav-item-userAccount">
-        <a routerLink="/registration" class="nav-link userAccount"
-          >Register for an account</a
-        >
-      </li>
-      <li class="nav-item-userAccount">
-        <label class="nav-link userAccount">Account: {{userName}}</label>
-      </li>
-    </ul>
-  </div>
-</nav>
-<nav
-  class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light"
-  id="site-navbar"
->
-  <div class="container">
-    <a class="navbar-brand" routerLink="">Le Bistrot d'Andre</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#site-nav"
-      aria-controls="site-nav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <img src="assets/menuIcon.png" class="menuIcon" /> Menu
-    </button>
-
+  <!-- Navigation Bar -->
+  <nav class="navbarAccount navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
     <div class="collapse navbar-collapse" id="site-nav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item ">
-          <a routerLink="" class="nav-link">Home</a></li>
-        <li class="nav-item">
-          <a routerLink="/reservation" class="nav-link">Book a Table</a>
+        <li class="nav-item-userAccount">
+          <a routerLink="/login" class="nav-link userAccount">Sign in</a>
         </li>
-        <li class="nav-item">
-          <a routerLink="/reservation/view " class="nav-link active">My Reservations</a>
+        <li class="nav-item-userAccount">
+          <a routerLink="/registration" class="nav-link userAccount">Register for an account</a>
         </li>
-        <li class="nav-item">
-          <a routerLink="/loyalties" class="nav-link">Loyalties</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="" class="nav-link">Menu</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="" class="nav-link">About us</a>
+        <li class="nav-item-userAccount">
+          <label class="nav-link userAccount">Account: {{userName}}</label>
         </li>
       </ul>
     </div>
-  </div>
-</nav>
-<!-- Navigation Bar END -->
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
+    <div class="container">
+      <a class="navbar-brand" routerLink="">Le Bistrot d'Andre</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav"
+        aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="assets/menuIcon.png" class="menuIcon" /> Menu
+      </button>
 
-LIST OF USERS RESERVATIONS WILL BE HERE
-  
+      <div class="collapse navbar-collapse" id="site-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item ">
+            <a routerLink="" class="nav-link">Home</a></li>
+          <li class="nav-item">
+            <a routerLink="/reservation" class="nav-link">Book a Table</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/reservation/view " class="nav-link active">My Reservations</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/loyalties" class="nav-link">Loyalties</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="" class="nav-link">Menu</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="" class="nav-link">About us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navigation Bar END -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center mb-5">
+        <h1> Your Reservations </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="bg-image" style="background-image: url(images/reservation_1.jpg);"></div>
+
+            <div class="row">
+              <h2 class="site-heading-2"> Bookings for {{userName}} </h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm">
+            <label for="Hostname"> Host Name </label>
+            <input type="text" class="form-control" formControlName="hostname">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm">
+            <label for="Restaurant Location"> Restaurant Location </label>
+            <input type="text" class="form-control" formControlName="restaurantlocation" value="232 Rue St Charles">
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-sm">
+            <label for="PartySize"> Party Size </label>
+            <input type="text" class="form-control" formControlName="partysize">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm">
+            <label for="Date"> Date </label>
+            <input type="text" class="form-control" formControlName="date">
+          </div>
+
+          <div class="col-sm">
+            <label for="Time"> Time </label>
+            <input type="text" class="form-control" formControlName="time">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 text-center mb-5">
+          <a routerLink="/reservation/view/edit" class="mb-0 col btn btn-primary btn-sm">
+            Modify Your Reservation
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    
+
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center mb-5">
+        <a routerLink="/reservation" class="btn btn-outline-white btn-lg">
+          Book a table
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+  </div>
+
+
   <!-- Footer -->
   <footer class="site-footer site-bg-dark site-section" id="site-aboutUs">
     <div class="container">
@@ -73,36 +140,49 @@ LIST OF USERS RESERVATIONS WILL BE HERE
           <div class="row">
             <div class="col-md-7">
               <h2 class="site-heading-2">About Us</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada fames ac turpis. Neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing. Ultrices eros in cursus turpis massa tincidunt. Elit eget gravida cum sociis. Ullamcorper a lacus vestibulum sed. </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Senectus et netus et malesuada fames ac turpis. Neque ornare aenean euismod
+                elementum nisi quis eleifend quam adipiscing. Ultrices eros in cursus turpis massa tincidunt. Elit eget
+                gravida cum sociis. Ullamcorper a lacus vestibulum sed. </p>
             </div>
             <div class="col-md-1"></div>
-            
+
             <div class="col-md-4">
               <div class="site-footer-widget mb-4">
                 <h2 class="site-heading-2">Contact Us</h2>
                 <ul class="list-unstyled">
-                  <li><p>Business: 1234 5678 90</p></li>
-                  <li><p>Restaurant: 1234 5678 90</p></li>
-                  <li><p>Head Office: 1234 5678 90</p></li> 
+                  <li>
+                    <p>Business: 1234 5678 90</p>
+                  </li>
+                  <li>
+                    <p>Restaurant: 1234 5678 90</p>
+                  </li>
+                  <li>
+                    <p>Head Office: 1234 5678 90</p>
+                  </li>
                 </ul>
               </div>
             </div>
-            
+
           </div>
         </div>
-       
+
       </div>
       <div class="row">
-         <div class="col-md-12 text-center">
-          
+        <div class="col-md-12 text-center">
+
         </div>
         <div class="col-md-12 text-center">
-          <p>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright 2020 &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          <p>&copy;
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright 2020 &copy;
+            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
+            by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p>
         </div>
       </div>
     </div>
   </footer>
   <!-- Footer END -->
-</body> 
+</body>
