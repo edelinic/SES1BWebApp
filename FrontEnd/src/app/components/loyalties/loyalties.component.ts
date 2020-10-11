@@ -8,10 +8,15 @@ import { state } from 'src/app/model/state';
   styleUrls: ['./loyalties.component.scss']
 })
 export class LoyaltiesComponent implements OnInit {
+  signedIn: boolean;
   userName: string;
   code1: string;
   code2: string;
   code3: string;
+  clicked1 = false;
+  clicked2 = false;
+  clicked3 = false;
+
   possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
   lengthOfCode = 15;
 
@@ -45,9 +50,11 @@ export class LoyaltiesComponent implements OnInit {
     if(state.userFirstName == null)
     {
       this.userName = "Not Logged in"
+      this.signedIn = false;
     }
     else{
       this.userName = state.userFirstName + " " + state.userLastName;
+      this.signedIn = true;
     } 
    }
 

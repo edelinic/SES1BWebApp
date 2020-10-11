@@ -81,14 +81,15 @@
             <img src="assets/party.png" class="img-fluid">
             <div class="media-body p-md-3 p-4">
               <h5 class="mt-0 h4">Birthday Specials</h5>
-              <p class="mb-4">Enjoy your birthday with a free entree. Show proof of ID and use the code below</p>
+              <p *ngIf="signedIn == true" class="mb-4">Enjoy your birthday with a free entree. Show proof of ID and use the code below</p>
+              <p *ngIf="signedIn == false" class="mb-4">Enjoy your birthday with a free entree when you sign up to our loyalties program</p>
                 <div class="container">
-                  <div class=row>
+                  <div class=row *ngIf="signedIn == true">
                     <p class="mb-0 col">
-                      <a class="btn btn-primary btn-sm" (click)="generateCode1()">Reveal Code</a>
+                      <button class="btn btn-primary btn-sm disabledButton" (click)="generateCode1()" disabled>Reveal Code</button>
                     </p>
                     <input type="text" class="form-control  text-center" id="code1" value={{code1}} #userinput>
-                    <button (click)="copyInputMessage(userinput)" value="click to copy" class="mb-0 col btn btn-primary btn-sm">Copy from Textbox</button>
+                    <button (click)="copyInputMessage(userinput)" value="click to copy" class="mb-0 col btn btn-primary btn-sm">Copy to clipboard</button>
                   </div>
                 </div>            
             </div>
@@ -100,12 +101,13 @@
             <img src="assets/firstTime.png" class="img-fluid">
             <div class="media-body p-md-3 p-4">
               <h5 class="mt-0 h4">First time</h5>
-              <p class="mb-4">Welcome to the D'Andre Family, heres a 10% off code for your first meal with us</p>
+              <p *ngIf="signedIn == true" class="mb-4">Welcome to the D'Andre Family, heres a 10% off code for your first meal with us</p>
+              <p *ngIf="signedIn == false" class="mb-4">Join the D'Andre Family and get a 10% off voucher on your first meal with us</p>
                 <div class="container">
-                  <div class=row>
-                    <p class="mb-0 col"><a class="btn btn-primary btn-sm" (click)="generateCode2()">Reveal Code</a></p>
-                    <input type="text" class="form-control  text-center" id="code2" value={{code2}} #userinput1>
-                    <button (click)="copyInputMessage(userinput1)" value="click to copy" class="mb-0 col btn btn-primary btn-sm">Copy from Textbox</button>
+                  <div class=row *ngIf="signedIn == true">
+                    <p class="mb-0 col"><button [disabled]="clicked2" class="btn btn-primary btn-sm" (click)="generateCode2(); clicked2 = true;">Reveal Code</button></p>
+                    <input type="text" class="form-control  text-center" id="code2" value={{code2}} #userinput1 >
+                    <button (click)="copyInputMessage(userinput1)" value="click to copy" class="mb-0 col btn btn-primary btn-sm">Copy to clipboard</button>
                   </div>
                 </div>            
             </div>
@@ -117,12 +119,13 @@
             <img src="assets/wine.png" class="img-fluid">
             <div class="media-body p-md-3 p-4">
               <h5 class="mt-0 h4">Drinks on us</h5>
-              <p class="mb-4">Get 50% off your glass of white or red wine. You will need proof of ID to drink</p>
+              <p *ngIf="signedIn == true" class="mb-4">Get 50% off your glass of white or red wine. You must be 18 years old or older to drink</p>
+              <p *ngIf="signedIn == false" class="mb-4">Join the D'Andre Family and get a 50% off voucher on your glass of white or red wine</p>
                 <div class="container">
-                  <div class=row>
-                    <p class="mb-0 col"><a class="btn btn-primary btn-sm" (click)="generateCode3()">Reveal Code</a></p>
+                  <div class=row *ngIf="signedIn == true">
+                    <p class="mb-0 col"><button [disabled]="clicked3" class="btn btn-primary btn-sm" (click)="generateCode3(); clicked3 = true;" >Reveal Code</button></p>
                     <input type="text" class="form-control  text-center" id="code3" value={{code3}} #userinput2>
-                    <button (click)="copyInputMessage(userinput2)" value="click to copy" class="mb-0 col btn btn-primary btn-sm">Copy from Textbox</button>
+                    <button (click)="copyInputMessage(userinput2)" value="click to copy" class="mb-0 col btn btn-primary btn-sm">Copy to clipboard</button>
                   </div>
                 </div>            
             </div>
