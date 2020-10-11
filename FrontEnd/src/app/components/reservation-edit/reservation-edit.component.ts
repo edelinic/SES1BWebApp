@@ -9,9 +9,11 @@ import { state } from 'src/app/model/state';
 })
 export class ReservationEditComponent implements OnInit {
   userName: string;
+  userFirstName: string;
+  userLastName: string;
   constructor(private titleService:Title) {
     this.titleService.setTitle("eDine - Edit Reservations");
-
+ 
     if(state.userFirstName == null)
     {
       this.userName = "Not Logged in"
