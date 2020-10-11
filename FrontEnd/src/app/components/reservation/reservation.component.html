@@ -1,74 +1,62 @@
 <body>
     <!-- Navigation Bar -->
-  <nav class="navbarAccount navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
-  <div class="collapse navbar-collapse" id="site-nav">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item-userAccount">
-        <a routerLink="/login" class="nav-link userAccount">Sign in</a>
-      </li>
-      <li class="nav-item-userAccount">
-        <a routerLink="/registration" class="nav-link userAccount"
-          >Register for an account</a
-        >
-      </li>
-      <li class="nav-item-userAccount">
-        <label class="nav-link userAccount">Account: {{userName}}</label>
-      </li>
-    </ul>
-  </div>
-</nav>
-<nav
-  class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light"
-  id="site-navbar"
->
-  <div class="container">
-    <a class="navbar-brand" routerLink="">Le Bistrot d'Andre</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#site-nav"
-      aria-controls="site-nav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <img src="assets/menuIcon.png" class="menuIcon" /> Menu
-    </button>
+    <nav class="navbarAccount navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
+        <div class="collapse navbar-collapse" id="site-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item-userAccount">
+                    <a routerLink="/login" class="nav-link userAccount">Sign in</a>
+                </li>
+                <li class="nav-item-userAccount">
+                    <a routerLink="/registration" class="nav-link userAccount">Register for an account</a>
+                </li>
+                <li class="nav-item-userAccount">
+                    <label class="nav-link userAccount">Account: {{userName}}</label>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark site_navbar bg-dark site-navbar-light" id="site-navbar">
+        <div class="container">
+            <a class="navbar-brand" routerLink="">Le Bistrot d'Andre</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-nav"
+                aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="assets/menuIcon.png" class="menuIcon" /> Menu
+            </button>
 
-    <div class="collapse navbar-collapse" id="site-nav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item ">
-          <a routerLink="" class="nav-link">Home</a></li>
-        <li class="nav-item">
-          <a routerLink="/reservation" class="nav-link active">Book a Table</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/reservation/view" class="nav-link">My Reservations</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/loyalties" class="nav-link">Loyalties</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="" class="nav-link">Menu</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="" class="nav-link">About us</a>
-        </li>
-      </ul>
+            <div class="collapse navbar-collapse" id="site-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ">
+                        <a routerLink="" class="nav-link">Home</a></li>
+                    <li class="nav-item">
+                        <a routerLink="/reservation" class="nav-link active">Book a Table</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/reservation/view" class="nav-link">My Reservations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/loyalties" class="nav-link">Loyalties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="" class="nav-link">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="" class="nav-link">About us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation Bar END -->
+
+
+
+    <!-- USER NOT SIGNED IN -->
+    <div class="col-lg-12 p-5 modal-content modal-dialog modal-lg" *ngIf="signedIn == false">
+        <h1 class="mb-4 text-center">Please sign in to Book a Table</h1>
     </div>
-  </div>
-</nav>
-<!-- Navigation Bar END -->
+    <!-- USER NOT SIGNED IN END -->
 
-
-
-<!-- USER NOT SIGNED IN -->
-<div class="col-lg-12 p-5 modal-content modal-dialog modal-lg" *ngIf="signedIn == false">
-    <h1 class="mb-4 text-center">Please sign in to Book a Table</h1>
-</div>
-<!-- USER NOT SIGNED IN END -->
-
-<!-- USER SIGNED IN -->
+    <!-- USER SIGNED IN -->
     <div class="modal-dialog modal-lg" role="document" *ngIf="signedIn == true">
         <div class="modal-content">
             <div class="modal-body">
@@ -76,21 +64,24 @@
                     <div class="col-lg-12">
                         <div class="bg-image" style="background-image: url(images/reservation_1.jpg);"></div>
                     </div>
-                    
 
-                    
-                    <div class="col-lg-12 p-5" >
+
+
+                    <div class="col-lg-12 p-5">
                         <h1 class="mb-4">Book a Table. </h1>
                         <h5 class="mb-4">Signed in as: {{userName}}</h5>
-                        <!-- <form action="#" method="post"> -->          
+
+                        <form [formGroup]="reservationForm">
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <label for="m_fname">First Name</label>
-                                    <input type="text" class="form-control" id="m_fname" value={{userFirstName}} disabled>
+                                    <input type="text" class="form-control" id="m_fname" value={{userFirstName}}
+                                        disabled>
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <label for="m_lname">Last Name</label>
-                                    <input type="text" class="form-control" id="m_lname" value={{userLastName}} disabled>
+                                    <input type="text" class="form-control" id="m_lname" value={{userLastName}}
+                                        disabled>
                                 </div>
                             </div>
                             <div class="row">
@@ -116,7 +107,7 @@
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <label for="m_date">Date</label>
-                                    <input  type="date" class="form-control" id="m_date">
+                                    <input type="date" class="form-control" id="m_date">
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <label for="m_time">Time</label>
@@ -133,22 +124,22 @@
 
                             <div class="row">
                                 <div class="col-md-12 form-group">
-                                    <a type="submit" class="btn btn-primary btn-lg btn-block" routerLink="/reservation/preorder"> Preorder Food</a>
+                                    <a type="submit" class="btn btn-primary btn-lg btn-block"
+                                        routerLink="/reservation/preorder"> Preorder Food</a>
                                     <!-- THIS BUTTON WILL SEND THE DATA ABOVE AND REDIRECT TO THE PREORDER PAGE -->
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-md-12 form-group">
-                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Reserve Now"> 
+                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Reserve Now"
+                                        (click)="reservationClick()">
                                     <!-- THIS BUTTON WILL SEND THE DATA ONLY -->
                                 </div>
                             </div>
-
-                        <!-- </form> -->
+                        </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

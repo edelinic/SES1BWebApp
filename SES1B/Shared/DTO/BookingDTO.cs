@@ -17,5 +17,7 @@ namespace SES1B.Shared.DTO
         public int CustomerId { get; set; }
         public List<OrderDTO> Order { get; set; }
         public List<TableDTO> Table { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
     }
 }
