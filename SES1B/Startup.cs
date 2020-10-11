@@ -52,7 +52,9 @@ namespace SES1B
             services.AddTransient<IRepository, Repository>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IBookingService, BookingService>();
+            services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<IOrderItemsService, OrderItemsService>();
+            services.AddTransient<ITableService, TableService>();
 
 
             RestaurantConfiguration.Instance.Configuration = Configuration;

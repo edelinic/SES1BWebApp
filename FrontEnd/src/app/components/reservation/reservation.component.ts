@@ -11,6 +11,8 @@ export class ReservationComponent implements OnInit {
   userFirstName: string;
   userLastName: string;
   userName: string;
+  userEmail: string;
+  userPhone: string;
 
   constructor(private titleService:Title) {
     this.titleService.setTitle("eDine - Book a Table");
@@ -26,10 +28,14 @@ export class ReservationComponent implements OnInit {
     {
       this.userFirstName = "N/A"
       this.userLastName = "N/A"
+      this.userEmail = "N/A"
+      this.userPhone = "N/A"
     }
     else{
       this.userFirstName = state.userFirstName;
       this.userLastName = state.userLastName;
+      this.userEmail = state.userEmail;
+      this.userPhone = state.userPhone;
     }  
    }
 

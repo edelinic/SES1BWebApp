@@ -63,6 +63,7 @@
   </nav>
   <!-- Navigation Bar END -->
 
+<<<<<<< HEAD
 
 
   <div ng-app="myApp">
@@ -71,6 +72,8 @@
   </div>
 
   
+=======
+>>>>>>> af5d6c4ef3fbfba8444e8590b55f78db91a88980
   <section class="site-section bg-light">
     <div class="container">
 
@@ -92,8 +95,11 @@
               <p class="mb-4">Enjoy your birthday with a free entree. Show proof of ID and use the code below</p>
                 <div class="container">
                   <div class=row>
-                    <p class="mb-0 col"><a href="#" class="btn btn-primary btn-sm">Reveal Code</a></p>
-                    <p class="mb-0 col"><a class="btn btn-primary btn-sm">Reveal Code</a></p>
+                    <p class="mb-0 col">
+                      <a class="btn btn-primary btn-sm" (click)="generateCode1()">Reveal Code</a>
+                    </p>
+                    <input type="text" class="form-control  text-center" id="code1" value={{code1}} #userinput>
+                    <button (click)="copyInputMessage(userinput)" value="click to copy" class="mb-0 col btn btn-primary btn-sm">Copy from Textbox</button>
                   </div>
                 </div>            
             </div>
@@ -108,8 +114,9 @@
               <p class="mb-4">Welcome to the D'Andre Family, heres a 10% off code for your first meal with us</p>
                 <div class="container">
                   <div class=row>
-                    <p class="mb-0 col"><a href="#" class="btn btn-primary btn-sm">Reveal Code</a></p>
-                    <p class="mb-0 col"><a class="btn btn-primary btn-sm">Reveal Code</a></p>
+                    <p class="mb-0 col"><a class="btn btn-primary btn-sm" (click)="generateCode2()">Reveal Code</a></p>
+                    <input type="text" class="form-control  text-center" id="code2" value={{code2}} #userinput1>
+                    <button (click)="copyInputMessage(userinput1)" value="click to copy" class="mb-0 col btn btn-primary btn-sm">Copy from Textbox</button>
                   </div>
                 </div>            
             </div>
@@ -124,8 +131,9 @@
               <p class="mb-4">Get 50% off your glass of white or red wine. You will need proof of ID to drink</p>
                 <div class="container">
                   <div class=row>
-                    <p class="mb-0 col"><a href="#" class="btn btn-primary btn-sm">Reveal Code</a></p>
-                    <p class="mb-0 col"><a class="btn btn-primary btn-sm">Reveal Code</a></p>
+                    <p class="mb-0 col"><a class="btn btn-primary btn-sm" (click)="generateCode3()">Reveal Code</a></p>
+                    <input type="text" class="form-control  text-center" id="code3" value={{code3}} #userinput2>
+                    <button (click)="copyInputMessage(userinput2)" value="click to copy" class="mb-0 col btn btn-primary btn-sm">Copy from Textbox</button>
                   </div>
                 </div>            
             </div>

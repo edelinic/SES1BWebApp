@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using SES1B.Interface.Service;
 using SES1B.Shared.DTO;
+using SES1BBackendAPI.Domain.Entity;
 using SES1BBackendAPI.Domain.Repository;
 using SES1BBackendAPI.Interface.Domain;
 using System;
@@ -36,6 +37,18 @@ namespace SES1BBackendAPI.Service
 
         public OrderItemsDTO CreateOrder(OrderItemsDTO orderItemsDTO)
         {
+            if (ValidateOrderItems(orderItemsDTO))
+            {
+                var orderitem = new Orderitems() {
+                    Quantity = orderItemsDTO.Quantity,
+                    OrderId = orderItemsDTO.OrderId,
+                    MenuItemId = orderItemsDTO.MenuItemId
+                };
+
+                _repository.PostOrderItems(orderitem);
+                orderItemsDTO.OrderId = orderitem.OrderId;
+            }
+
             return orderItemsDTO;
         }
         
@@ -47,6 +60,7 @@ namespace SES1BBackendAPI.Service
             {
                 OrderItems.Quantity = orderItemsDTO.Quantity;
                 OrderItems.MenuItemId = orderItemsDTO.MenuItemId;
+                _repository.PostOrderItems(OrderItems);
             }
             
             return orderItemsDTO;
@@ -63,7 +77,8 @@ namespace SES1BBackendAPI.Service
 
         public OrderItemsDTO DeleteOrder(OrderItemsDTO orderItemsDTO)
         {
-            // var OrderItems = _repository.PostOrderItems();
+            var OrderItems = _repository.GetOrderItems().WithOrderItemsId(orderItemsDTO.OrderId);
+            _repository.RemoveOrderItems(OrderItems);
 
             return orderItemsDTO;
         }
