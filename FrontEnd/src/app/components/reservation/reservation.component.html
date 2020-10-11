@@ -62,7 +62,14 @@
 
 
 
-    <div class="modal-dialog modal-lg" role="document">
+<!-- USER NOT SIGNED IN -->
+<div class="col-lg-12 p-5 modal-content modal-dialog modal-lg" *ngIf="signedIn == false">
+    <h1 class="mb-4 text-center">Please sign in to Book a Table</h1>
+</div>
+<!-- USER NOT SIGNED IN END -->
+
+<!-- USER SIGNED IN -->
+    <div class="modal-dialog modal-lg" role="document" *ngIf="signedIn == true">
         <div class="modal-content">
             <div class="modal-body">
                 <div class="row">
@@ -70,15 +77,9 @@
                         <div class="bg-image" style="background-image: url(images/reservation_1.jpg);"></div>
                     </div>
                     
-                    <!-- USER NOT SIGNED IN -->
-                    <div class="col-lg-12 p-5" *ngIf="signedIn == false">
-                        <h1 class="mb-4 text-center">Please sign in to book a table</h1>
-                        
-                    </div>
-                    <!-- USER NOT SIGNED IN END -->
 
-                    <!-- USER SIGNED IN -->
-                    <div class="col-lg-12 p-5" *ngIf="signedIn == true">
+                    
+                    <div class="col-lg-12 p-5" >
                         <h1 class="mb-4">Book a Table. </h1>
                         <h5 class="mb-4">Signed in as: {{userName}}</h5>
                         <!-- <form action="#" method="post"> -->          

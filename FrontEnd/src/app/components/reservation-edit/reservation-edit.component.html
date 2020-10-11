@@ -43,10 +43,10 @@
         <li class="nav-item ">
           <a routerLink="" class="nav-link">Home</a></li>
         <li class="nav-item">
-          <a routerLink="/reservation " class="nav-link active">Book a Table</a>
+          <a routerLink="/reservation " class="nav-link">Book a Table</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/reservation/view" class="nav-link">My Reservations</a>
+          <a routerLink="/reservation/view" class="nav-link active">My Reservations</a>
         </li>
         <li class="nav-item">
           <a routerLink="/loyalties" class="nav-link">Loyalties</a>
@@ -63,6 +63,13 @@
 </nav>
 <!-- Navigation Bar END -->
 
+  <!-- USER NOT SIGNED IN -->
+  <div class="col-lg-12 p-5 modal-content modal-dialog modal-lg" *ngIf="signedIn == false">
+    <h1 class="mb-4 text-center">Please sign in to Edit Reservations</h1>
+
+  </div>
+  <!-- USER NOT SIGNED IN END -->
+
 <div class="modal-dialog modal-lg" role="document">
   <div class="modal-content">
       <div class="modal-body">
@@ -71,41 +78,26 @@
                   <div class="bg-image" style="background-image: url(images/reservation_1.jpg);"></div>
               </div>
               <div class="col-lg-12 p-5">
-                  <h1 class="mb-4">Book a Table</h1>
+                  <h1 class="mb-4">Edit Reservation</h1>
+                  <h5 class="mb-4">for '{{userName}}'</h5>
                   <!-- <form action="#" method="post"> -->
                       <div class="row">
                           <div class="col-md-6 form-group">
                               <label for="m_fname">First Name</label>
+                              <img class="lockedIcon" src="assets/lockedIcon.png">
                               <input type="text" class="form-control" id="m_fname" value={{userFirstName}} disabled>
                           </div>
                           <div class="col-md-6 form-group">
                               <label for="m_lname">Last Name</label>
+                              <img class="lockedIcon" src="assets/lockedIcon.png">
                               <input type="text" class="form-control" id="m_lname" value={{userLastName}} disabled>
                           </div>
                       </div>
+
                       <div class="row">
                           <div class="col-md-12 form-group">
-                              <label for="m_email">Email</label>
-                              <input type="email" class="form-control" id="m_email">
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-md-6 form-group">
                               <label for="m_people">How Many People</label>
-                              <select name="" id="m_people" class="form-control">
-                                  <option value="1">1 Person</option>
-                                  <option value="2">2 People</option>
-                                  <option value="3">3 People</option>
-                                  <option value="4">4 People</option>
-                                  <option value="5">5 People</option>
-                                  <option value="6">6 People</option>
-                                  <option value="7">7 People</option>
-                                  <option value="8">8+ People</option>
-                              </select>
-                          </div>
-                          <div class="col-md-6 form-group">
-                              <label for="m_phone">Phone</label>
-                              <input type="text" class="form-control" id="m_phone">
+                              <input name="" id="m_people" class="form-control">
                           </div>
                       </div>
 
@@ -129,14 +121,7 @@
 
                       <div class="row">
                           <div class="col-md-12 form-group">
-                              <a type="submit" class="btn btn-primary btn-lg btn-block" routerLink="/reservation/preorder"> Preorder Food</a>
-                              <!-- THIS BUTTON WILL SEND THE DATA ABOVE AND REDIRECT TO THE PREORDER PAGE -->
-                          </div>
-                      </div>
-
-                      <div class="row">
-                          <div class="col-md-12 form-group">
-                              <input type="submit" class="btn btn-primary btn-lg btn-block" value="Reserve Now"> 
+                              <input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit Changes"> 
                               <!-- THIS BUTTON WILL SEND THE DATA ONLY -->
                           </div>
                       </div>

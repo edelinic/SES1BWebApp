@@ -46,91 +46,95 @@
       </div>
     </div>
   </nav>
+
   <!-- Navigation Bar END -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center mb-5">
-        <h1> Your Reservations </h1>
+
+  <!-- USER NOT SIGNED IN -->
+  <div class="col-lg-12 p-5 modal-content modal-dialog modal-lg" *ngIf="signedIn == false">
+    <h1 class="mb-4 text-center">Please sign in to View Reservations</h1>
+
+  </div>
+  <!-- USER NOT SIGNED IN END -->
+
+  <!-- <div *ngIf="signedIn == true"> -->
+  <div>
+    <div class="col-lg-12 p-5">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1> Your Reservations </h1>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="bg-image" style="background-image: url(images/reservation_1.jpg);"></div>
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="col-lg-12 p-5 modal-body">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="bg-image" style="background-image: url(images/reservation_1.jpg);"></div>
 
-            <div class="row">
-              <h2 class="site-heading-2"> Bookings for {{userName}} </h2>
+              <div class="row">
+                <h4 class="mb-4"> Booking for '{{userName}}' at DATE TIME HERE </h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm">
+              <label for="Hostname">Host Name:</label>
+              <input type="text" class="form-control" formControlName="hostname" value={{userName}} disabled>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm">
+              <label for="Restaurant Location"> Restaurant Location:</label>
+              <input type="text" class="form-control" formControlName="restaurantlocation" value="232 Rue St Charles"
+                disabled>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm">
+              <label for="m_people">Party Size:</label>
+              <input type="text" class="form-control" formControlName="m_people" value="#COUNT OF PEOPLE HERE#"
+                disabled>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm">
+              <label for="Date"> Date: </label>
+              <input type="text" class="form-control" formControlName="date" value="# BOOKING DATE HERE#" disabled>
+            </div>
+
+            <div class="col-sm">
+              <label for="Time"> Time: </label>
+              <input type="text" class="form-control" formControlName="time" value="# BOOKING DATE HERE#" disabled>
             </div>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-sm">
-            <label for="Hostname"> Host Name </label>
-            <input type="text" class="form-control" formControlName="hostname">
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm">
-            <label for="Restaurant Location"> Restaurant Location </label>
-            <input type="text" class="form-control" formControlName="restaurantlocation" value="232 Rue St Charles">
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class="col-sm">
-            <label for="PartySize"> Party Size </label>
-            <input type="text" class="form-control" formControlName="partysize">
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm">
-            <label for="Date"> Date </label>
-            <input type="text" class="form-control" formControlName="date">
-          </div>
-
-          <div class="col-sm">
-            <label for="Time"> Time </label>
-            <input type="text" class="form-control" formControlName="time">
+          <div class="col-md-12 form-group">
+            <a routerLink="/reservation/view/edit" class="btn btn-primary btn-lg btn-block">
+              Modify Your Reservation
+            </a>
           </div>
         </div>
       </div>
+    </div>
 
+    <div class="container">
       <div class="row">
         <div class="col-md-12 text-center mb-5">
-          <a routerLink="/reservation/view/edit" class="mb-0 col btn btn-primary btn-sm">
-            Modify Your Reservation
+          <a routerLink="/reservation" class="btn btn-primary btn-lg btn-block">
+            Book a table
           </a>
         </div>
       </div>
-
-    </div>
-
-    
-
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 text-center mb-5">
-        <a routerLink="/reservation" class="btn btn-outline-white btn-lg">
-          Book a table
-        </a>
-      </div>
     </div>
   </div>
-
-  <div class="container">
-
-  </div>
-
 
   <!-- Footer -->
   <footer class="site-footer site-bg-dark site-section" id="site-aboutUs">

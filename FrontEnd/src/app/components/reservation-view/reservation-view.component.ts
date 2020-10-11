@@ -9,14 +9,20 @@ import { state } from 'src/app/model/state';
 })
 export class ReservationViewComponent implements OnInit {
   userName: string;
+  userFirstName: string;
+  userLastName: string;
+  signedIn: boolean;
+
   constructor(private titleService:Title) {
     this.titleService.setTitle("eDine - My Reservations");
     if(state.userFirstName == null)
     {
       this.userName = "Not Logged in"
+      this.signedIn = false;
     }
     else{
       this.userName = state.userFirstName + " " + state.userLastName;
+      this.signedIn = true;
     }
    }
 
