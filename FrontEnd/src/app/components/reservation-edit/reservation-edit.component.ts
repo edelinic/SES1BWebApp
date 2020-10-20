@@ -28,6 +28,11 @@ export class ReservationEditComponent implements OnInit {
     }
    }
 
+   ReservationEditClick()
+   {
+      alert("Reservation Edit Sent");
+   }
+
   ngOnInit(): void {
   }
 

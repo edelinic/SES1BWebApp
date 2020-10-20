@@ -97,31 +97,31 @@
                       <div class="row">
                           <div class="col-md-12 form-group">
                               <label for="m_people">How Many People</label>
-                              <input name="" id="m_people" class="form-control">
+                              <input name="" id="m_people" class="form-control" value="4">
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col-md-6 form-group">
                               <label for="m_date">Date</label>
-                              <input type="text" class="form-control" id="m_date">
+                              <input type="date" class="form-control" id="m_date" value="2020-10-19">
                           </div>
                           <div class="col-md-6 form-group">
                               <label for="m_time">Time</label>
-                              <input type="text" class="form-control" id="m_time">
+                              <input type="time" class="form-control" id="m_time" value="20:30">
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col-md-12 form-group">
                               <label for="m_message">Special Requests</label>
-                              <textarea class="form-control" id="m_message" cols="30" rows="7"></textarea>
+                              <textarea class="form-control" id="m_message" cols="30" rows="7" value="N/A"></textarea>
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col-md-12 form-group">
-                              <input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit Changes"> 
+                              <input (click)="ReservationEditClick()"  type="submit" class="btn btn-primary btn-lg btn-block" value="Submit Changes" routerLink=""> 
                               <!-- THIS BUTTON WILL SEND THE DATA ONLY -->
                           </div>
                       </div>
@@ -170,7 +170,7 @@
           
         </div>
         <div class="col-md-12 text-center">
-          <p>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          <p hidden>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright 2020 &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
         </div>

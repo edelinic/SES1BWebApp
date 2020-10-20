@@ -56,8 +56,8 @@
   </div>
   <!-- USER NOT SIGNED IN END -->
 
-  <!-- <div *ngIf="signedIn == true"> -->
-  <div>
+  <div *ngIf="signedIn == true">
+  <!-- <div> -->
     <div class="col-lg-12 p-5">
       <div class="row">
         <div class="col-md-12 text-center">
@@ -74,21 +74,23 @@
               <div class="bg-image" style="background-image: url(images/reservation_1.jpg);"></div>
 
               <div class="row">
-                <h4 class="mb-4"> Booking for '{{userName}}' at DATE TIME HERE </h4>
+                <h4 class="mb-4"> Booking for '{{userName}}' </h4>
               </div>
             </div>
           </div>
 
           <div class="row">
             <div class="col-sm">
-              <label for="Hostname">Host Name:</label>
+              <label for="Hostname">Host Name:</label> 
+              <img class="lockedIcon2" src="assets/lockedIcon.png">
               <input type="text" class="form-control" formControlName="hostname" value={{userName}} disabled>
             </div>
           </div>
 
           <div class="row">
             <div class="col-sm">
-              <label for="Restaurant Location"> Restaurant Location:</label>
+              <label for="Restaurant Location"> Restaurant Location:</label> 
+              <img class="lockedIcon2" src="assets/lockedIcon.png">
               <input type="text" class="form-control" formControlName="restaurantlocation" value="232 Rue St Charles"
                 disabled>
             </div>
@@ -97,20 +99,23 @@
           <div class="row">
             <div class="col-sm">
               <label for="m_people">Party Size:</label>
-              <input type="text" class="form-control" formControlName="m_people" value="#COUNT OF PEOPLE HERE#"
+              <img class="lockedIcon2" src="assets/lockedIcon.png">
+              <input type="text" class="form-control" formControlName="m_people" value="4"
                 disabled>
             </div>
           </div>
 
           <div class="row">
             <div class="col-sm">
-              <label for="Date"> Date: </label>
-              <input type="text" class="form-control" formControlName="date" value="# BOOKING DATE HERE#" disabled>
+              <label for="Date"> Date: </label> 
+              <img class="lockedIcon" src="assets/lockedIcon.png">
+              <input type="date" class="form-control" formControlName="date" value="2020-10-19" disabled>
             </div>
 
             <div class="col-sm">
-              <label for="Time"> Time: </label>
-              <input type="text" class="form-control" formControlName="time" value="# BOOKING DATE HERE#" disabled>
+              <label for="Time"> Time: </label> 
+              <img class="lockedIcon" src="assets/lockedIcon.png">
+              <input type="time" class="form-control" id="m_time" value="20:30" disabled>
             </div>
           </div>
         </div>
@@ -177,7 +182,7 @@
 
         </div>
         <div class="col-md-12 text-center">
-          <p>&copy;
+          <p hidden>&copy;
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             Copyright 2020 &copy;
             <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
